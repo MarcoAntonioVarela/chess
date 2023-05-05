@@ -23,15 +23,13 @@ class TestPawn
 public:
    void run()
    {
-      pawn_test_first_move_two_squares();
-      pawn_test_first_move_can_move();
-      pawn_test_not_first_move_can_move();
-      pawn_test_not_first_move_cannot_move();
-      pawn_test_en_passant();
-      pawn_test_promotion_without_capture();
-      pawn_test_promotion_with_capture();
-      pawn_test_capturing();
-      test_9();
+      testFirstMoveCanMoveTwoSquares();
+      testFirstMoveCantMove();
+      testNotFirstMoveCanMove();
+      testNotFirstMoveCantMove();
+      testEnPassant();
+      testPromotion();
+      testPromotionWithCapture();
       cout << "\nAll the test cases for testPawn.h have been successfull!\n";
    }
 private:
@@ -44,139 +42,223 @@ private:
 
 
    /*****************************************************
-    * TESTING: First move, can move two squares 
+    * TESTING: First move, can move two squares
     * 
     * +---a-b-c-d-e-f-g-h---+
     * |                     |
     * 8   R N B Q K B N R   8
     * 7   P P P P P P P P   7
-    * 6    (p)              6
+    * 6                     6
+    * 5                     5
+    * 4           *         4
+    * 3           *         3
+    * 2   p p p p(p)p p p   2
+    * 1   r n b q k b n r   1
+    * |                     |
+    * +---a-b-c-d-e-f-g-h---+
+    *
+    *****************************************************/
+   void testFirstMoveCanMoveTwoSquares() 
+   {
+      // SETUP
+      Pawn p("e2", true);
+      Board p;
+      b = p;
+
+      // EXERCISE
+      set<Move> possible = p.getPossible(board);
+
+      // VERIFY
+      assert(possible.size() == 2);
+      Move move("e2e3e4")
+      assert(possible.find(move) != possible.end())
+
+      // TEARDOWN
+   }
+
+   /*****************************************************
+    * TESTING: First move, can't move
+    *
+    * +---a-b-c-d-e-f-g-h---+
+    * |                     |
+    * 8   R N B Q K B N R   8
+    * 7   P P P P   P P P   7
+    * 6                     6
     * 5                     5
     * 4                     4
-    * 3                     3
-    * 2   p   p p p p p p   2
+    * 3           P         3
+    * 2   p p p p(p)p p p   2
     * 1   r n b q k b n r   1
     * |                     |
     * +---a-b-c-d-e-f-g-h---+
     *
     *****************************************************/
 
-   void pawn_test_first_move_two_squares()
+   void testFirstMoveCantMove() 
    {
-      //SETUP
+      // SETUP
+      Pawn p("e2", true);
+      Board p;
+      b = p;
 
-      //EXERCISE
-      
+      // EXERCISE
+      set<Move> possible = p.getPossible(board);
 
-      //VERYFY
-      //assert();
+      // VERIFY
+      assert(possible.size() == 0);
+      assert(possible.find(move) = possible.end())
 
-      //TEARDOWN
-      
+      // TEARDOWN
+
    }
 
-      /*****************************************************
-    * TESTING: First move, can't move 
-    * 
+   /*****************************************************
+    * TESTING:Not first move, can move
+    *
     * +---a-b-c-d-e-f-g-h---+
     * |                     |
     * 8   R N B Q K B N R   8
-    * 7   P P P P P P P P   7
-    * 6    (p)              6
+    * 7   P P P P   P P P   7
+    * 6                     6
     * 5                     5
-    * 4                     4
-    * 3                     3
-    * 2   p   p p p p p p   2
+    * 4           P         4
+    * 3           *         3
+    * 2   p p p p(p)p p p   2
     * 1   r n b q k b n r   1
     * |                     |
     * +---a-b-c-d-e-f-g-h---+
     *
     *****************************************************/
-
-   void pawn_test_first_move_can_move()
+   void testNotFirstMoveCanMove() 
    {
-      //SETUP
+      // SETUP
+      Pawn p("e2", true);
+      Board p;
+      b = p;
 
-      //EXERCISE
-      
+      // EXERCISE
+      set<Move> possible = p.getPossible(board);
 
-      //VERYFY
-      //assert();
+      // VERIFY
+      assert(possible.size() == 1);
+      Move move("e2e3")
+      assert(possible.find(move) != possible.end())
 
-      //TEARDOWN
-      
+      // TEARDOWN
+
    }
-
-      /*****************************************************
-    * TESTING: Not first move, can move
-    * 
-    * +---a-b-c-d-e-f-g-h---+
-    * |                     |
-    * 8   R N B Q K B N R   8
-    * 7   P P P P P P P P   7
-    * 6    (p)              6
-    * 5                     5
-    * 4                     4
-    * 3                     3
-    * 2   p   p p p p p p   2
-    * 1   r n b q k b n r   1
-    * |                     |
-    * +---a-b-c-d-e-f-g-h---+
-    *
-    *****************************************************/
-
-   void pawn_test_not_first_move_can_move()
-   {
-      //SETUP
-
-      //EXERCISE
-      
-
-      //VERYFY
-      //assert();
-
-      //TEARDOWN
-      
-   }
-      /*****************************************************
+   /*****************************************************
     * TESTING: Not first move, can't move
-    * 
+    *
     * +---a-b-c-d-e-f-g-h---+
     * |                     |
     * 8   R N B Q K B N R   8
-    * 7   P P P P P P P P   7
-    * 6    (p)              6
-    * 5                     5
-    * 4                     4
+    * 7   P P P P   P P P   7
+    * 6                     6
+    * 5           P         5
+    * 4          (p)        4
     * 3                     3
-    * 2   p   p p p p p p   2
+    * 2   p p p p   p p p   2
     * 1   r n b q k b n r   1
     * |                     |
     * +---a-b-c-d-e-f-g-h---+
     *
     *****************************************************/
-
-   void pawn_test_not_first_move_cannot_move()
+   void testNotFirstMoveCantMove() 
    {
-      //SETUP
+      // SETUP
+      Pawn p("e4", true);
+      Board p;
+      b = p;
+    
 
-      //EXERCISE
-      
+      // EXERCISE
+      set<Move> possible = p.getPossible(board);
 
-      //VERYFY
-      //assert();
+      // VERIFY
+      assert(possible.size()==0);
+      assert (possible.find(move) != possible.end())
 
-      //TEARDOWN
-      
+      // TEARDOWN
    }
-      /*****************************************************
+   /*****************************************************
     * TESTING: En passant
-    * 
+    *
     * +---a-b-c-d-e-f-g-h---+
     * |                     |
     * 8   R N B Q K B N R   8
-    * 7   P P P P P P P P   7
-    * 6    (p)              6
+    * 7   P P P     P P P   7
+    * 6         * *         6
+    * 5         P(p)        5
+    * 4                     4
+    * 3                     3
+    * 2   p   p p   p p p   2
+    * 1   r n b q k b n r   1
+    * |                     |
+    * +---a-b-c-d-e-f-g-h---+
+    *
+    *****************************************************/
+   void testEnPassant() 
+   {
+      // SETUP
+      Pawn p("e5", true);
+      Board p;
+      b = p;
+ 
+
+      // EXERCISE
+      set<Move> possible = p.getPossible(board);
+
+      // VERIFY
+      assert(possible.size() == 2);
+      Move move("e5e6d6")
+      assert(possible.find(move) != possible.end())
+
+      // TEARDOWN
+   }
+   /*****************************************************
+    * TESTING: Promotion
+    *
+    * +---a-b-c-d-e-f-g-h---+
+    * |                     |
+    * 8   R N B Q * B N R   8
+    * 7   P P P P(p)P P P   7
+    * 6                     6
+    * 5                     5
+    * 4                     4
+    * 3                     3
+    * 2   p   p p   p p p   2
+    * 1   r n b q k b n r   1
+    * |                     |
+    * +---a-b-c-d-e-f-g-h---+
+    *
+    *****************************************************/
+   void testPromotion() 
+   {
+      // SETUP
+      Pawn p("e7", true);
+      Board p;
+      b = p;
+
+      // EXERCISE
+      set<Move> possible = p.getPossible(board);
+
+      // VERIFY
+      assert(possible.size() == 1);
+      Move move("e7e8")
+      assert(possible.find(move) != possible.end())
+
+      // TEARDOWN
+
+   }
+   /*****************************************************
+    * TESTING: Promotion with capture
+    *
+    * +---a-b-c-d-e-f-g-h---+
+    * |                     |
+    * 8   R N B Q * B N R   8
+    * 7   P P P P(p)P P P   7
+    * 6                     6
     * 5                     5
     * 4                     4
     * 3                     3
@@ -186,145 +268,24 @@ private:
     * +---a-b-c-d-e-f-g-h---+
     *
     *****************************************************/
-
-   void pawn_test_en_passant()
+   void testPromotionWithCapture() 
    {
-      //SETUP
+      // SETUP
+      Pawn p("e7", true);
+      Board p;
+      b = p;
 
-      //EXERCISE
-      
+      // EXERCISE
+      set<Move> possible = p.getPossible(board);
 
-      //VERYFY
-      //assert();
+      // VERIFY
+      assert(possible.size() == 2);
+      Move move("e7e8f8")
+      assert(possible.find(move) != possible.end())
 
-      //TEARDOWN
-      
-   }
-      /*****************************************************
-    * TESTING: Pawn promotion without capture
-    * 
-    * +---a-b-c-d-e-f-g-h---+
-    * |                     |
-    * 8   R N B Q K B N R   8
-    * 7   P P P P P P P P   7
-    * 6    (p)              6
-    * 5                     5
-    * 4                     4
-    * 3                     3
-    * 2   p   p p p p p p   2
-    * 1   r n b q k b n r   1
-    * |                     |
-    * +---a-b-c-d-e-f-g-h---+
-    *
-    *****************************************************/
-
-   void pawn_test_promotion_without_capture()
-   {
-      //SETUP
-
-      //EXERCISE
-      
-
-      //VERYFY
-      //assert();
-
-      //TEARDOWN
-      
-   }
-      /*****************************************************
-    * TESTING: Pawn promotion with capture
-    * 
-    * +---a-b-c-d-e-f-g-h---+
-    * |                     |
-    * 8   R N B Q K B N R   8
-    * 7   P P P P P P P P   7
-    * 6    (p)              6
-    * 5                     5
-    * 4                     4
-    * 3                     3
-    * 2   p   p p p p p p   2
-    * 1   r n b q k b n r   1
-    * |                     |
-    * +---a-b-c-d-e-f-g-h---+
-    *
-    *****************************************************/
-
-   void pawn_test_promotion_with_capture()
-   {
-      //SETUP
-
-      //EXERCISE
-      
-
-      //VERYFY
-      //assert();
-
-      //TEARDOWN
-      
-   }
-      /*****************************************************
-    * TESTING: Pawn Capturing
-    * 
-    * +---a-b-c-d-e-f-g-h---+
-    * |                     |
-    * 8   R N B Q K B N R   8
-    * 7   P P P P P P P P   7
-    * 6    (p)              6
-    * 5                     5
-    * 4                     4
-    * 3                     3
-    * 2   p   p p p p p p   2
-    * 1   r n b q k b n r   1
-    * |                     |
-    * +---a-b-c-d-e-f-g-h---+
-    *
-    *****************************************************/
-
-   void pawn_test_capturing()
-   {
-      //SETUP
-
-      //EXERCISE
-      
-
-      //VERYFY
-      //assert();
-
-      //TEARDOWN
-      
-   }
-      /*****************************************************
-    * TESTING ...
-    * 
-    * +---a-b-c-d-e-f-g-h---+
-    * |                     |
-    * 8   R N B Q K B N R   8
-    * 7   P P P P P P P P   7
-    * 6    (p)              6
-    * 5                     5
-    * 4                     4
-    * 3                     3
-    * 2   p   p p p p p p   2
-    * 1   r n b q k b n r   1
-    * |                     |
-    * +---a-b-c-d-e-f-g-h---+
-    *
-    *****************************************************/
-
-   void test_9()
-   {
-      //SETUP
-
-      //EXERCISE
-
-
-      //VERYFY
-      //assert();
-
-      //TEARDOWN
-
-
+      // TEARDOWN
 
    }
+
 
 };
