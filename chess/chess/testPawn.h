@@ -33,13 +33,6 @@ public:
       cout << "\nAll the test cases for testPawn.h have been successfull!\n";
    }
 private:
-   //Utility funciton because floating point numbers are approximations (just in case)
-   bool closeEnough(double value, double test, double tolerence) const
-   {
-      double difference = value - test;
-      return (difference >= -tolerence) && (difference <= tolerence);
-   }
-
 
    /*****************************************************
     * TESTING: First move, can move two squares
@@ -62,16 +55,16 @@ private:
    {
       // SETUP
       Pawn p("e2", true);
-      Board p;
+      Board b;
       b = p;
 
       // EXERCISE
-      set<Move> possible = p.getPossible(board);
+      set<Move> possible = p.getPossible(b);
 
       // VERIFY
       assert(possible.size() == 2);
-      Move move("e2e3e4")
-      assert(possible.find(move) != possible.end())
+      Move move("e2e3e4");
+      assert(possible.find(move) != possible.end());
 
       // TEARDOWN
    }
@@ -98,15 +91,16 @@ private:
    {
       // SETUP
       Pawn p("e2", true);
-      Board p;
-      b = p;
+      Pawn p2("e3", false)
+      Board b;
+      b = p2;
 
       // EXERCISE
-      set<Move> possible = p.getPossible(board);
+      set<Move> possible = p.getPossible(b);
 
       // VERIFY
       assert(possible.size() == 0);
-      assert(possible.find(move) = possible.end())
+      assert(possible.find(move) == possible.end());
 
       // TEARDOWN
 
@@ -133,16 +127,16 @@ private:
    {
       // SETUP
       Pawn p("e2", true);
-      Board p;
+      Board b;
       b = p;
 
       // EXERCISE
-      set<Move> possible = p.getPossible(board);
+      set<Move> possible = p.getPossible(b);
 
       // VERIFY
       assert(possible.size() == 1);
-      Move move("e2e3")
-      assert(possible.find(move) != possible.end())
+      Move move("e2e3");
+         assert(possible.find(move) != possible.end());
 
       // TEARDOWN
 
@@ -168,16 +162,16 @@ private:
    {
       // SETUP
       Pawn p("e4", true);
-      Board p;
+      Board b;
       b = p;
     
 
       // EXERCISE
-      set<Move> possible = p.getPossible(board);
+      set<Move> possible = p.getPossible(b);
 
       // VERIFY
       assert(possible.size()==0);
-      assert (possible.find(move) != possible.end())
+      assert(possible.find(move) != possible.end());
 
       // TEARDOWN
    }
@@ -202,17 +196,17 @@ private:
    {
       // SETUP
       Pawn p("e5", true);
-      Board p;
+      Board b;
       b = p;
  
 
       // EXERCISE
-      set<Move> possible = p.getPossible(board);
+      set<Move> possible = p.getPossible(b);
 
       // VERIFY
       assert(possible.size() == 2);
-      Move move("e5e6d6")
-      assert(possible.find(move) != possible.end())
+      Move move("e5e6d6");
+      assert(possible.find(move) != possible.end());
 
       // TEARDOWN
    }
@@ -237,16 +231,16 @@ private:
    {
       // SETUP
       Pawn p("e7", true);
-      Board p;
+      Board b;
       b = p;
 
       // EXERCISE
-      set<Move> possible = p.getPossible(board);
+      set<Move> possible = p.getPossible(b);
 
       // VERIFY
       assert(possible.size() == 1);
-      Move move("e7e8")
-      assert(possible.find(move) != possible.end())
+      Move move("e7e8Q");
+      assert(possible.find(move) != possible.end());
 
       // TEARDOWN
 
@@ -272,16 +266,16 @@ private:
    {
       // SETUP
       Pawn p("e7", true);
-      Board p;
+      Board b;
       b = p;
 
       // EXERCISE
-      set<Move> possible = p.getPossible(board);
+      set<Move> possible = p.getPossible(b);
 
       // VERIFY
       assert(possible.size() == 2);
-      Move move("e7e8f8")
-      assert(possible.find(move) != possible.end())
+      Move move("e7e8f8");
+      assert(possible.find(move) != possible.end());
 
       // TEARDOWN
 
