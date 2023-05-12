@@ -30,5 +30,19 @@ public:
    std::string getText();
    Point getSrc();
    Point getDes();
+   char getPromotion();
+   char getCapture();
+   bool getEnPassant() { return enPassant; };
+   bool getCastleK()   { return castleK; }
+   bool getCastleQ()   { return castleQ; }
+   bool getWhiteMove() { return isWhite; }
+   void setEnPassant() { enPassant = true; }
+   void setCastleK()   { castleK = true; }
+   void setCastleQ()   { castleQ = true; }
+   void setWhiteMove() { isWhite = true; }
+
+   //operator overload
+   Move operator= (const Move& move);
+   Move operator= (const std::string& str);
 
 };
