@@ -9,8 +9,7 @@
  ************************************************************************/
 #pragma once
 #include <string>
-
-class Point;
+#include "point.h"
 
 class Move
 {
@@ -26,7 +25,7 @@ private:
    std::string error;
 
 public:
-   Move();
+   Move(const std::string& coordinate);
    std::string getText();
    Point getSrc();
    Point getDes();
@@ -42,7 +41,7 @@ public:
    void setWhiteMove() { isWhite = true; }
 
    //operator overload
-   Move operator= (const Move& move);
-   Move operator= (const std::string& str);
+   void operator= (const Move& move);
+   void operator= (const std::string& str);
 
 };

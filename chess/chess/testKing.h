@@ -15,8 +15,6 @@
 
 using namespace std;
 
-
-
 /*****************************************************
 * TEST KING CLASS
  * A class that contains the King class unit tests

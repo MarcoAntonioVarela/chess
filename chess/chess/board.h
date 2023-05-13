@@ -8,20 +8,16 @@
  ************************************************************************/
 #pragma once
 #include <set>
-
-class TestBoard;
-class Piece;
-class Point;
-class ogstream;
+#include "point.h"
+#include "piece.h"
 
 class Board
 {
-   friend TestBoard;
 private:
 
    // multidimentional array. We use this so it is easier to implement
    // the operator[]
-   Piece* pieces[9][9];
+   Piece* pieces[8][8];
    int currentMove;
    // ogstream gout;
    void swap(Point& point1, Point& point2);
@@ -37,7 +33,6 @@ public:
    void draw();
 
    // operator overloads
-   Piece& operator[] (const Point& point) { return *pieces[point.getY()][point.getX()]; }
-   void operator= (const Piece& piece);
-
+   // Piece& operator[] (const Point& point) { return *pieces[point.getY()][point.getX()]; }
+   void operator= (Piece& piece);
 };

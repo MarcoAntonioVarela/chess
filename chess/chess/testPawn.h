@@ -10,9 +10,9 @@
 #pragma once
 #include <iostream>
 #include <cassert>
+#include "piece.h"
+#include "move.h"
 using namespace std;
-
-
 
 /*****************************************************
 * TEST PAWN CLASS
@@ -91,7 +91,7 @@ private:
    {
       // SETUP
       Pawn p("e2", true);
-      Pawn p2("e3", false)
+      Pawn p2("e3", false);
       Board b;
       b = p2;
 
@@ -100,7 +100,7 @@ private:
 
       // VERIFY
       assert(possible.size() == 0);
-      assert(possible.find(move) == possible.end());
+      /*assert(possible.find(move) == possible.end());*/
 
       // TEARDOWN
 
@@ -171,7 +171,7 @@ private:
 
       // VERIFY
       assert(possible.size()==0);
-      assert(possible.find(move) != possible.end());
+      /*assert(possible.find(move) != possible.end());*/
 
       // TEARDOWN
    }

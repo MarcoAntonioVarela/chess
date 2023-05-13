@@ -9,24 +9,18 @@
 
 #include "piece.h"
 
-Piece::Piece(int r, int c, bool white) {
-   point.getRow() = r;
-   point.getColumn() = c;
-   fWhite = white;
-   nMoves = 0;
-   lastMove = -1;
-}
 
 void Piece::assign(Point p) {
    position = p;
 }
-
+/*
 void Piece::assign(Piece p) {
    position = p.position;
    fWhite = p.fWhite;
    nMoves = p.nMoves;
    lastMove = p.lastMove;
 }
+*/
 
 bool Piece::isWhite() {
    return fWhite;
