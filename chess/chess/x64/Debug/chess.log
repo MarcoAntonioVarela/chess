@@ -1,103 +1,108 @@
 ﻿  chess.cpp
   test.cpp
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(64,7): error C2065: 'Pawn': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(64,12): error C2146: syntax error: missing ';' before identifier 'p'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(64,12): error C3861: 'p': identifier not found
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(65,7): error C2065: 'Board': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(65,13): error C2146: syntax error: missing ';' before identifier 'b'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(65,13): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(66,7): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(66,11): error C2065: 'p': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(69,7): error C2065: 'set': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(69,11): error C2065: 'Move': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(69,17): error C2065: 'possible': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(69,28): error C2065: 'p': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(69,42): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(72,7): error C2065: 'possible': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(73,7): error C2065: 'Move': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(73,12): error C2146: syntax error: missing ';' before identifier 'move'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(74,7): error C2144: syntax error: 'void' should be preceded by ')'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(73,16): error C2064: term does not evaluate to a function taking 0 arguments
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(74,7): error C2144: syntax error: 'void' should be preceded by ';'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(74,1): error C2059: syntax error: ')'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(74,7): error C2059: syntax error: '!'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(100,7): error C2065: 'Pawn': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(100,12): error C2146: syntax error: missing ';' before identifier 'p'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(100,12): error C3861: 'p': identifier not found
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(101,7): error C2065: 'Pawn': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(101,12): error C2146: syntax error: missing ';' before identifier 'p2'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(101,12): error C3861: 'p2': identifier not found
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(102,7): error C2146: syntax error: missing ';' before identifier 'Board'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(102,7): error C2065: 'Board': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(102,13): error C2146: syntax error: missing ';' before identifier 'b'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(102,13): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(103,7): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(103,11): error C2065: 'p': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(104,7): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(104,11): error C2065: 'p2': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(107,7): error C2065: 'set': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(107,11): error C2065: 'Move': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(107,17): error C2065: 'possible': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(107,28): error C2065: 'p': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(107,42): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(110,7): error C2065: 'possible': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(111,7): error C2065: 'possible': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(115,4): error C2143: syntax error: missing ';' before '}'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(137,7): error C2065: 'Pawn': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(137,12): error C2146: syntax error: missing ';' before identifier 'p'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(137,12): error C3861: 'p': identifier not found
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(138,7): error C2065: 'Board': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(138,13): error C2146: syntax error: missing ';' before identifier 'b'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(138,13): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(139,7): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(139,11): error C2065: 'p': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(142,7): error C2065: 'set': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(142,11): error C2065: 'Move': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(142,17): error C2065: 'possible': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(142,28): error C2065: 'p': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(142,42): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(145,7): error C2065: 'possible': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(146,7): error C2065: 'Move': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(146,12): error C2146: syntax error: missing ';' before identifier 'move'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(147,7): error C2144: syntax error: 'void' should be preceded by ')'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(146,16): error C2064: term does not evaluate to a function taking 0 arguments
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(147,7): error C2144: syntax error: 'void' should be preceded by ';'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(147,1): error C2059: syntax error: ')'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(147,7): error C2059: syntax error: '!'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(172,7): error C2065: 'Pawn': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(172,12): error C2146: syntax error: missing ';' before identifier 'p'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(172,12): error C3861: 'p': identifier not found
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(173,7): error C2065: 'Board': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(173,13): error C2146: syntax error: missing ';' before identifier 'b'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(173,13): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(174,7): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(174,11): error C2065: 'p': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(178,7): error C2065: 'set': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(178,11): error C2065: 'Move': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(178,17): error C2065: 'possible': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(178,28): error C2065: 'p': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(178,42): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(181,7): error C2065: 'possible': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(182,7): error C2065: 'possible': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(185,4): error C2143: syntax error: missing ';' before '}'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(206,7): error C2065: 'Pawn': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(206,12): error C2146: syntax error: missing ';' before identifier 'p'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(206,12): error C3861: 'p': identifier not found
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(207,7): error C2065: 'Board': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(207,13): error C2146: syntax error: missing ';' before identifier 'b'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(207,13): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(208,7): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(208,11): error C2065: 'p': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(212,7): error C2065: 'set': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(212,11): error C2065: 'Move': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(212,17): error C2065: 'possible': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(212,28): error C2065: 'p': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(212,42): error C2065: 'b': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(215,7): error C2065: 'possible': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(216,7): error C2065: 'Move': undeclared identifier
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(216,12): error C2146: syntax error: missing ';' before identifier 'move'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(217,7): error C2144: syntax error: 'void' should be preceded by ')'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(216,16): error C2064: term does not evaluate to a function taking 0 arguments
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(217,7): error C2144: syntax error: 'void' should be preceded by ';'
-D:\Programming\CSE231\chess\chess\chess\testPawn.h(217,1): fatal  error C1003: error count exceeds 100; stopping compilation
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(57,7): error C2065: 'Pawn': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(57,12): error C2146: syntax error: missing ';' before identifier 'p'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(57,12): error C3861: 'p': identifier not found
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(58,7): error C2065: 'Board': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(58,13): error C2146: syntax error: missing ';' before identifier 'b'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(58,13): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(59,7): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(59,11): error C2065: 'p': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(62,7): error C2065: 'set': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(62,11): error C2065: 'Move': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(62,17): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(62,28): error C2065: 'p': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(62,42): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(65,7): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(66,7): error C2065: 'Move': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(66,12): error C2146: syntax error: missing ';' before identifier 'move'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(66,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(67,7): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(93,7): error C2065: 'Pawn': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(93,12): error C2146: syntax error: missing ';' before identifier 'p'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(93,12): error C3861: 'p': identifier not found
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(94,7): error C2065: 'Pawn': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(94,12): error C2146: syntax error: missing ';' before identifier 'p2'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(94,12): error C3861: 'p2': identifier not found
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(95,7): error C2146: syntax error: missing ';' before identifier 'Board'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(95,7): error C2065: 'Board': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(95,13): error C2146: syntax error: missing ';' before identifier 'b'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(95,13): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(96,7): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(96,11): error C2065: 'p2': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(99,7): error C2065: 'set': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(99,11): error C2065: 'Move': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(99,17): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(99,28): error C2065: 'p': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(99,42): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(102,7): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(103,7): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(129,7): error C2065: 'Pawn': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(129,12): error C2146: syntax error: missing ';' before identifier 'p'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(129,12): error C3861: 'p': identifier not found
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(130,7): error C2065: 'Board': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(130,13): error C2146: syntax error: missing ';' before identifier 'b'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(130,13): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(131,7): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(131,11): error C2065: 'p': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(134,7): error C2065: 'set': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(134,11): error C2065: 'Move': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(134,17): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(134,28): error C2065: 'p': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(134,42): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(137,7): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(138,7): error C2065: 'Move': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(138,12): error C2146: syntax error: missing ';' before identifier 'move'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(138,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(139,10): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(164,7): error C2065: 'Pawn': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(164,12): error C2146: syntax error: missing ';' before identifier 'p'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(164,12): error C3861: 'p': identifier not found
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(165,7): error C2065: 'Board': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(165,13): error C2146: syntax error: missing ';' before identifier 'b'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(165,13): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(166,7): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(166,11): error C2065: 'p': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(170,7): error C2065: 'set': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(170,11): error C2065: 'Move': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(170,17): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(170,28): error C2065: 'p': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(170,42): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(173,7): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(174,7): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(198,7): error C2065: 'Pawn': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(198,12): error C2146: syntax error: missing ';' before identifier 'p'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(198,12): error C3861: 'p': identifier not found
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(199,7): error C2065: 'Board': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(199,13): error C2146: syntax error: missing ';' before identifier 'b'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(199,13): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(200,7): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(200,11): error C2065: 'p': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(204,7): error C2065: 'set': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(204,11): error C2065: 'Move': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(204,17): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(204,28): error C2065: 'p': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(204,42): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(207,7): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(208,7): error C2065: 'Move': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(208,12): error C2146: syntax error: missing ';' before identifier 'move'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(208,16): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(209,7): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(233,7): error C2065: 'Pawn': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(233,12): error C2146: syntax error: missing ';' before identifier 'p'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(233,12): error C3861: 'p': identifier not found
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(234,7): error C2065: 'Board': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(234,13): error C2146: syntax error: missing ';' before identifier 'b'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(234,13): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(235,7): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(235,11): error C2065: 'p': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(238,7): error C2065: 'set': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(238,11): error C2065: 'Move': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(238,17): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(238,28): error C2065: 'p': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(238,42): error C2065: 'b': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(241,7): error C2065: 'possible': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(242,7): error C2065: 'Move': undeclared identifier
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(242,12): error C2146: syntax error: missing ';' before identifier 'move'
+C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(242,1): fatal  error C1003: error count exceeds 100; stopping compilation
   Generating Code...
