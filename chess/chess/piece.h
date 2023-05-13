@@ -25,7 +25,7 @@ public:
    bool isWhite();
    bool isMove();
    int getNMoves();
-   Point getPosition();
+   Point getPosition(); 
    bool justMoved();
    /*char getLetter();*/
    virtual void getMoves(char** board) = 0;

@@ -18,14 +18,18 @@ class Board
 {
    friend TestBoard;
 private:
-   std::set<Piece*> pieces;
+
+   // multidimentional array. We use this so it is easier to implement
+   // the operator[]
+   Piece* pieces[9][9];
    int currentMove;
-   ogstream gout;
+   // ogstream gout;
    void swap(Point& point1, Point& point2);
    bool assertBoard();
 
 public:
-   Board(ogstream gout, bool reset=false);
+   Board();
+   // Board(ogstream gout, bool reset=false);
    int getCurrentMove() { return currentMove; }
    bool isWhiteTurn() { return currentMove % 2 == 0; }
    void reset();
@@ -33,7 +37,7 @@ public:
    void draw();
 
    // operator overloads
-   Piece& operator[] (const Point& pos) { return *Board[pos.getX()][pos.getY()]; }
+   Piece& operator[] (const Point& point) { return *pieces[point.getY()][point.getX()]; }
    void operator= (const Piece& piece);
 
 };

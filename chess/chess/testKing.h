@@ -10,6 +10,9 @@
 #pragma once
 #include <iostream>
 #include <cassert>
+#include "board.h"
+#include "move.h"
+
 using namespace std;
 
 
