@@ -54,7 +54,7 @@ public:
    Pawn(const Position& coordinate, bool isWhite);
    std::set<Move> getPossible(const Board& board);
    char getLetter() const { return 'p'; }
-   bool isMoved() { return isFirstMove; }
+   bool isMoved() { return !isFirstMove; }
 private:
    bool isFirstMove;
 };
@@ -115,13 +115,13 @@ private:
 //      bool isFirstMove;
 //};
 //
-/************************
+/**********************
 * SPACE
 ***********************/
 class Space : public Piece
 {
 public:
    Space(const Position& position);
-   std::set<Move> getPossible(const Board& board) { return {}; };
+   std::set<Move> getPossible(const Board& board) { return {}; }
    char getLetter() const { return ' '; }
  };

@@ -31,6 +31,6 @@ class Board
       // operator overloads
       Piece& operator[] (const Position& point);
       Piece& operator[] (const Position& point) const;
-      void operator= (const Piece& piece);
+      void operator= (Piece& piece);
 //   void operator -= (const Point& point); // Kill
 };

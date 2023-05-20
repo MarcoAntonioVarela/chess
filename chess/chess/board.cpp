@@ -16,70 +16,88 @@ Board::Board()
 void Board::reset()
 {
 
+   board[0][0] = new Space(Position("a1"));
+   board[0][1] = new Space(Position("b1"));
+   board[0][2] = new Space(Position("c1"));
+   board[0][3] = new Space(Position("d1"));
+   board[0][4] = new Space(Position("e1"));
+   board[0][5] = new Space(Position("f1"));
+   board[0][6] = new Space(Position("g1"));
+   board[0][7] = new Space(Position("h1"));
+
    // Black pieces
-   board[1][0] = new Pawn("g1", false);
-   board[1][1] = new Pawn("g2", false);
-   board[1][2] = new Pawn("g3", false);
-   board[1][3] = new Pawn("g4", false);
-   board[1][4] = new Pawn("g5", false);
-   board[1][5] = new Pawn("g6", false);
-   board[1][6] = new Pawn("g7", false);
-   board[1][7] = new Pawn("g8", false);
+   board[1][0] = new Pawn(Position("a2"), true);
+   board[1][1] = new Pawn(Position("b2"), true);
+   board[1][2] = new Pawn(Position("c2"), true);
+   board[1][3] = new Pawn(Position("d2"), true);
+   board[1][4] = new Pawn(Position("e2"), true);
+   board[1][5] = new Pawn(Position("f2"), true);
+   board[1][6] = new Pawn(Position("g2"), true);
+   board[1][7] = new Pawn(Position("h2"), true);
 
 
    // Spaces
 
-   board[2][0] = new Space("c1");
-   board[2][1] = new Space("c2");
-   board[2][2] = new Space("c3");
-   board[2][3] = new Space("c4");
-   board[2][4] = new Space("c5");
-   board[2][5] = new Space("c6");
-   board[2][6] = new Space("c7");
-   board[2][7] = new Space("c8");
+   board[2][0] = new Space(Position("a3"));
+   board[2][1] = new Space(Position("b3"));
+   board[2][2] = new Space(Position("c3"));
+   board[2][3] = new Space(Position("d3"));
+   board[2][4] = new Space(Position("e3"));
+   board[2][5] = new Space(Position("f3"));
+   board[2][6] = new Space(Position("g3"));
+   board[2][7] = new Space(Position("h3"));
 
 
-   board[3][0] = new Space("e1");
-   board[3][1] = new Space("e2");
-   board[3][2] = new Space("e3");
-   board[3][3] = new Space("e4");
-   board[3][4] = new Space("e5");
-   board[3][5] = new Space("e6");
-   board[3][6] = new Space("e7");
-   board[3][7] = new Space("e8");
+   board[3][0] = new Space(Position("a4"));
+   board[3][1] = new Space(Position("b4"));
+   board[3][2] = new Space(Position("c4"));
+   board[3][3] = new Space(Position("d4"));
+   board[3][4] = new Space(Position("e4"));
+   board[3][5] = new Space(Position("f4"));
+   board[3][6] = new Space(Position("g4"));
+   board[3][7] = new Space(Position("h4"));
 
 
-   board[4][0] = new Space("d1");
-   board[4][1] = new Space("d2");
-   board[4][2] = new Space("d3");
-   board[4][3] = new Space("d4");
-   board[4][4] = new Space("d5");
-   board[4][5] = new Space("d6");
-   board[4][6] = new Space("d7");
-   board[4][7] = new Space("d8");
+   board[4][0] = new Space(Position("a5"));
+   board[4][1] = new Space(Position("b5"));
+   board[4][2] = new Space(Position("c5"));
+   board[4][3] = new Space(Position("d5"));
+   board[4][4] = new Space(Position("e5"));
+   board[4][5] = new Space(Position("f5"));
+   board[4][6] = new Space(Position("g5"));
+   board[4][7] = new Space(Position("h5"));
 
 
-   board[5][0] = new Space("c1");
-   board[5][1] = new Space("c2");
-   board[5][2] = new Space("c3");
-   board[5][3] = new Space("c4");
-   board[5][4] = new Space("c5");
-   board[5][5] = new Space("c6");
-   board[5][6] = new Space("c7");
-   board[5][7] = new Space("c8");
+   board[5][0] = new Space(Position("a6"));
+   board[5][1] = new Space(Position("b6"));
+   board[5][2] = new Space(Position("c6"));
+   board[5][3] = new Space(Position("d6"));
+   board[5][4] = new Space(Position("e6"));
+   board[5][5] = new Space(Position("f6"));
+   board[5][6] = new Space(Position("g6"));
+   board[5][7] = new Space(Position("h6"));
 
 
 
 
    // White pieces
-   board[6][0] = new Pawn("b1", true);
-   board[6][1] = new Pawn("b2", true);
-   board[6][2] = new Pawn("b3", true);
-   board[6][3] = new Pawn("b4", true);
-   board[6][4] = new Pawn("b5", true);
-   board[6][5] = new Pawn("b6", true);
-   board[6][6] = new Pawn("b7", true);
-   board[6][7] = new Pawn("b8", true);
+   board[6][0] = new Pawn(Position("a7"), false);
+   board[6][1] = new Pawn(Position("b7"), false);
+   board[6][2] = new Pawn(Position("c7"), false);
+   board[6][3] = new Pawn(Position("d7"), false);
+   board[6][4] = new Pawn(Position("e7"), false);
+   board[6][5] = new Pawn(Position("f7"), false);
+   board[6][6] = new Pawn(Position("g7"), false);
+   board[6][7] = new Pawn(Position("h7"), false);
+
+   board[7][0] = new Space(Position("a8"));
+   board[7][1] = new Space(Position("b8"));
+   board[7][2] = new Space(Position("c8"));
+   board[7][3] = new Space(Position("d8"));
+   board[7][4] = new Space(Position("e8"));
+   board[7][5] = new Space(Position("f8"));
+   board[7][6] = new Space(Position("g8"));
+   board[7][7] = new Space(Position("h8"));
 
 }
 
@@ -94,7 +112,7 @@ Piece& Board::operator[](const Position& point) const
 }
 
 // Placing a piece to the board using the = operator
-void Board::operator=(const Piece& piece) 
+void Board::operator=(Piece& piece)
 {
-   *board[piece.getPosition().getRow()][piece.getPosition().getCol()] = piece;
+   board[piece.getPosition().getRow()][piece.getPosition().getCol()] = &piece;
 }

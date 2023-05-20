@@ -10,6 +10,7 @@
 #include "piece.h"
 #include "move.h"
 #include "board.h"
+#include "pieceType.h"
 using namespace std;
 /************
 * PIECE
@@ -63,7 +64,7 @@ set<Move> Pawn::getPossible(const Board& board)
    set<Move> possible = {};
    Position posMove(getPosition(), isWhite() ? ADD_R : SUB_R);
 
-   if (board[posMove] == ' ')
+   if (posMove.isValid() && board[posMove] == ' ')
    {
       Move move;
       move.setSrc(getPosition());
@@ -86,6 +87,37 @@ set<Move> Pawn::getPossible(const Board& board)
          possible.insert(move);
       }
    }
+
+   if (posMove.getRow() == (isWhite() ? 7 : 0))
+   {
+      Move move;
+      move.setSrc(getPosition());
+      move.setDes(posMove);
+      move.setWhiteMove(isWhite());
+      move.setPromote(QUEEN); // FIX: How to convert char to PieceType?
+      possible.insert(move);
+   }
+
+   // capture
+   /*const int cDelta[] = { 1, -1 };
+   for (int i = 0; i < 2; i++)
+   {
+      Position posMove(position.getRow() + (isWhite() ? 1 : -1),
+         position.getCol() + cDelta[i]);
+
+      if (posMove.isValid() &&
+         board[posMove] != ' ' &&
+         board[posMove].isWhite() != isWhite())
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         move.setCapture(board[posMove].getLetter());
+
+         possible.insert(move);
+      }
+   }*/
 
    return possible;
 }
