@@ -8,35 +8,39 @@
  ************************************************************************/
 #pragma once
 
-using namespace std;
-#include "point.h"
+#include "position.h"
 #include <set>
-#include "string"
 // #include "board.h"
-#include "move.h"
+//#include "move.h"
 
 class Board;
-class TestKing;
+class Move;
+//class TestKing;
 class TestPawn;
 
+/************************
+ * PIECE
+ * Abstract parent class
+ ***********************/
 class Piece 
 {
 protected:
-   Point position;
-   bool fWhite;
+   Position position;
+   bool isWhite;
    int nMoves;
    int lastMove;
 
 public:
-   void assign(Point p);
-   Point getPosition();
-   bool isWhite();
-   bool isMove();
-   int getNMoves();
-   Point getPosition(); 
-   bool justMoved();
-   /*char getLetter();*/
-   virtual set<Move> getPossible(Board board) = 0;
+   Piece();
+//   void assign(Point p);
+//   Point getPosition();
+   bool isWhite() { return isWhite; };
+//   bool isMove();
+//   int getNMoves();
+   Position getPosition() const { return position; };
+//   bool justMoved();
+   virtual char getLetter() const = 0;
+//   virtual set<Move> getPossible(Board board) = 0;
 };
 
 /************************
@@ -46,74 +50,75 @@ class Pawn : public Piece
 {
    friend TestPawn;
 public:
-   Pawn(string point, bool white);
-   set<Move> getPossible(Board board);
+   Pawn(const Position& coordinate, bool isWhite);
+   std::set<Move> getPossible(const Board& board);
+   char getLetter() const { return 'p'; }
 private:
-      bool isFirstMove;
+   bool isFirstMove;
 };
 
-/************************
- * ROOK
- ***********************/
-class Rook : public Piece
-{
-   friend TestKing;
-public:
-   Rook(string point, bool white);
-   set<Move> getPossible(Board board);
-   private:
-      bool isFirstMove;
-};
-
-/************************
- * KNIGHT
- ***********************/
-class Knight : public Piece
-{
-public:
-   Knight(string point, bool white);
-   set<Move> getPossible(Board board);
-};
-
-/************************
- * BISHOP
- ***********************/
-class Bishop : public Piece
-{
-public:
-   Bishop(string point, bool white);
-   set<Move> getPossible(Board board);
-};
-
-/************************
- * QUEEN
- ***********************/
-class Queen : public Piece
-{
-public:
-   Queen(string point, bool white);
-   set<Move> getPossible(Board board);
-};
-
-/************************
- * KING
- ***********************/
-class King : public Piece
-{
-   friend TestKing;
-public:
-   King(string point, bool white);
-   set<Move> getPossible(Board board);
-   private:
-      bool isFirstMove;
-};
-
-/************************
- * SPACE
- ***********************/
-class Space : public Piece
-{
-public:
-   Space(string point);
-   set<Move> getPossible(Board board);
-};
+///************************
+// * ROOK
+// ***********************/
+//class Rook : public Piece
+//{
+//   friend TestKing;
+//public:
+//   Rook(string point, bool white);
+//   set<Move> getPossible(Board board);
+//   private:
+//      bool isFirstMove;
+//};
+//
+///************************
+// * KNIGHT
+// ***********************/
+//class Knight : public Piece
+//{
+//public:
+//   Knight(string point, bool white);
+//   set<Move> getPossible(Board board);
+//};
+//
+///************************
+// * BISHOP
+// ***********************/
+//class Bishop : public Piece
+//{
+//public:
+//   Bishop(string point, bool white);
+//   set<Move> getPossible(Board board);
+//};
+//
+///************************
+// * QUEEN
+// ***********************/
+//class Queen : public Piece
+//{
+//public:
+//   Queen(string point, bool white);
+//   set<Move> getPossible(Board board);
+//};
+//
+///************************
+// * KING
+// ***********************/
+//class King : public Piece
+//{
+//   friend TestKing;
+//public:
+//   King(string point, bool white);
+//   set<Move> getPossible(Board board);
+//   private:
+//      bool isFirstMove;
+//};
+//
+///************************
+// * SPACE
+// ***********************/
+//class Space : public Piece
+//{
+//public:
+//   Space(string point);
+//   set<Move> getPossible(Board board);
+// };

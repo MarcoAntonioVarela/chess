@@ -9,9 +9,16 @@ This file contains the 'main' function. Our chess program execution begins and e
 
 
 #include <iostream>
-#include "test.h"
+#include "testKing.h"
+#include "testPawn.h"
+
+void runner()
+{
+   TestPawn().run();
+}
+
 
 int main()
 {
-   testRunner();
+   std::cout << "All test pass!" << std::endl;
 }

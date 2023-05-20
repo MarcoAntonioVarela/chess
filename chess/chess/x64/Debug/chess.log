@@ -1,139 +1,46 @@
 ﻿  board.cpp
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(37,10): error C2535: 'Point Piece::getPosition(void)': member function already defined or declared
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(33,10): message : see declaration of 'Piece::getPosition'
-C:\Users\marco\Desktop\chess\chess\chess\board.cpp(29,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\marco\Desktop\chess\chess\chess\board.cpp(29,1): error C2556: 'int Board::operator =(Piece &)': overloaded function differs only by return type from 'void Board::operator =(Piece &)'
-C:\Users\marco\Desktop\chess\chess\chess\board.h(37,9): message : see declaration of 'Board::operator ='
-C:\Users\marco\Desktop\chess\chess\chess\board.cpp(28,8): error C2371: 'Board::operator =': redefinition; different basic types
-C:\Users\marco\Desktop\chess\chess\chess\board.h(37,9): message : see declaration of 'Board::operator ='
+  chess.cpp
+  move.cpp
+D:\Programming\CSE231\chess\chess\chess\move.cpp(36,14): error C2678: binary '[': no operator found which takes a left-hand operand of type 'const Board' (or there is no acceptable conversion)
+D:\Programming\CSE231\chess\chess\chess\board.h(32,14): message : could be 'Piece &Board::operator [](const Position &)'
+D:\Programming\CSE231\chess\chess\chess\move.cpp(36,14): message : while trying to match the argument list '(const Board, Position)'
+D:\Programming\CSE231\chess\chess\chess\move.cpp(39,14): error C2678: binary '[': no operator found which takes a left-hand operand of type 'const Board' (or there is no acceptable conversion)
+D:\Programming\CSE231\chess\chess\chess\board.h(32,14): message : could be 'Piece &Board::operator [](const Position &)'
+D:\Programming\CSE231\chess\chess\chess\move.cpp(39,14): message : while trying to match the argument list '(const Board, Position)'
+D:\Programming\CSE231\chess\chess\chess\move.cpp(42,28): error C2678: binary '[': no operator found which takes a left-hand operand of type 'const Board' (or there is no acceptable conversion)
+D:\Programming\CSE231\chess\chess\chess\board.h(32,14): message : could be 'Piece &Board::operator [](const Position &)'
+D:\Programming\CSE231\chess\chess\chess\move.cpp(42,28): message : while trying to match the argument list '(const Board, Position)'
   piece.cpp
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(37,10): error C2535: 'Point Piece::getPosition(void)': member function already defined or declared
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(33,10): message : see declaration of 'Piece::getPosition'
-  test.cpp
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(37,10): error C2535: 'Point Piece::getPosition(void)': member function already defined or declared
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(33,10): message : see declaration of 'Piece::getPosition'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(58,13): error C2079: 'b' uses undefined class 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(59,11): error C2440: '=': cannot convert from 'Pawn' to 'int'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(59,11): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(62,29): error C2664: 'std::set<Move,std::less<Move>,std::allocator<Move>> Pawn::getPossible(Board)': cannot convert argument 1 from 'int' to 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(62,42): message : use of undefined type 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(18,7): message : see declaration of 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(51,14): message : see declaration of 'Pawn::getPossible'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(62,29): message : while trying to match the argument list '(int)'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(95,13): error C2079: 'b' uses undefined class 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(96,11): error C2440: '=': cannot convert from 'Pawn' to 'int'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(96,11): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(99,29): error C2664: 'std::set<Move,std::less<Move>,std::allocator<Move>> Pawn::getPossible(Board)': cannot convert argument 1 from 'int' to 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(99,42): message : use of undefined type 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(18,7): message : see declaration of 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(51,14): message : see declaration of 'Pawn::getPossible'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(99,29): message : while trying to match the argument list '(int)'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(130,13): error C2079: 'b' uses undefined class 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(131,11): error C2440: '=': cannot convert from 'Pawn' to 'int'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(131,11): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(134,29): error C2664: 'std::set<Move,std::less<Move>,std::allocator<Move>> Pawn::getPossible(Board)': cannot convert argument 1 from 'int' to 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(134,42): message : use of undefined type 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(18,7): message : see declaration of 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(51,14): message : see declaration of 'Pawn::getPossible'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(134,29): message : while trying to match the argument list '(int)'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(165,13): error C2079: 'b' uses undefined class 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(166,11): error C2440: '=': cannot convert from 'Pawn' to 'int'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(166,11): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(170,29): error C2664: 'std::set<Move,std::less<Move>,std::allocator<Move>> Pawn::getPossible(Board)': cannot convert argument 1 from 'int' to 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(170,42): message : use of undefined type 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(18,7): message : see declaration of 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(51,14): message : see declaration of 'Pawn::getPossible'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(170,29): message : while trying to match the argument list '(int)'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(199,13): error C2079: 'b' uses undefined class 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(200,11): error C2440: '=': cannot convert from 'Pawn' to 'int'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(200,11): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(204,29): error C2664: 'std::set<Move,std::less<Move>,std::allocator<Move>> Pawn::getPossible(Board)': cannot convert argument 1 from 'int' to 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(204,42): message : use of undefined type 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(18,7): message : see declaration of 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(51,14): message : see declaration of 'Pawn::getPossible'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(204,29): message : while trying to match the argument list '(int)'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(234,13): error C2079: 'b' uses undefined class 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(235,11): error C2440: '=': cannot convert from 'Pawn' to 'int'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(235,11): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(238,29): error C2664: 'std::set<Move,std::less<Move>,std::allocator<Move>> Pawn::getPossible(Board)': cannot convert argument 1 from 'int' to 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(238,42): message : use of undefined type 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(18,7): message : see declaration of 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(51,14): message : see declaration of 'Pawn::getPossible'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(238,29): message : while trying to match the argument list '(int)'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(269,13): error C2079: 'b' uses undefined class 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(270,11): error C2440: '=': cannot convert from 'Pawn' to 'int'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(270,11): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(273,29): error C2664: 'std::set<Move,std::less<Move>,std::allocator<Move>> Pawn::getPossible(Board)': cannot convert argument 1 from 'int' to 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(273,42): message : use of undefined type 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(18,7): message : see declaration of 'Board'
-C:\Users\marco\Desktop\chess\chess\chess\piece.h(51,14): message : see declaration of 'Pawn::getPossible'
-C:\Users\marco\Desktop\chess\chess\chess\testPawn.h(273,29): message : while trying to match the argument list '(int)'
-C:\Users\marco\Desktop\chess\chess\chess\testking.h(71,7): error C2665: 'std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::find': no overloaded function could convert all the argument types
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xtree(331,16): error C2079: 'std::_Tree_node<Move,std::_Default_allocator_traits<_Alloc>::void_pointer>::_Myval' uses undefined class 'Move'
+          with
+          [
+              _Alloc=std::allocator<Move>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xtree(1941,1): message : see reference to class template instantiation 'std::_Tree_node<Move,std::_Default_allocator_traits<_Alloc>::void_pointer>' being compiled
+          with
+          [
+              _Alloc=std::allocator<Move>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xtree(1937,1): message : while compiling class template member function 'void std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::_Alloc_sentinel_and_proxy(void)'
           with
           [
               _Kty=Move,
               _Pr=std::less<Move>,
               _Alloc=std::allocator<Move>
           ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xtree(1380,31): message : could be 'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<Move>>> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::find(const Move &) const'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xtree(883,34): message : see reference to function template instantiation 'void std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::_Alloc_sentinel_and_proxy(void)' being compiled
           with
           [
               _Kty=Move,
               _Pr=std::less<Move>,
               _Alloc=std::allocator<Move>
           ]
-C:\Users\marco\Desktop\chess\chess\chess\testking.h(71,7): message : 'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<Move>>> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::find(const Move &) const': cannot convert argument 1 from 'overloaded-function' to 'const Move &'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\set(52): message : see reference to class template instantiation 'std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>' being compiled
           with
           [
               _Kty=Move,
               _Pr=std::less<Move>,
               _Alloc=std::allocator<Move>
           ]
-C:\Users\marco\Desktop\chess\chess\chess\testking.h(71,7): message : Reason: cannot convert from 'overloaded-function' to 'const Move'
-C:\Users\marco\Desktop\chess\chess\chess\testking.h(71,7): message : No constructor could take the source type, or constructor overload resolution was ambiguous
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xtree(1376,25): message : or       'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<Move>>> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::find(const Move &)'
-          with
-          [
-              _Kty=Move,
-              _Pr=std::less<Move>,
-              _Alloc=std::allocator<Move>
-          ]
-C:\Users\marco\Desktop\chess\chess\chess\testking.h(71,7): message : 'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<Move>>> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::find(const Move &)': cannot convert argument 1 from 'overloaded-function' to 'const Move &'
-          with
-          [
-              _Kty=Move,
-              _Pr=std::less<Move>,
-              _Alloc=std::allocator<Move>
-          ]
-C:\Users\marco\Desktop\chess\chess\chess\testking.h(71,7): message : Reason: cannot convert from 'overloaded-function' to 'const Move'
-C:\Users\marco\Desktop\chess\chess\chess\testking.h(71,7): message : No constructor could take the source type, or constructor overload resolution was ambiguous
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xtree(1390,31): message : or       'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<Move>>> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::find(const _Other &) const'
-          with
-          [
-              _Kty=Move,
-              _Pr=std::less<Move>,
-              _Alloc=std::allocator<Move>
-          ]
-C:\Users\marco\Desktop\chess\chess\chess\testking.h(71,1): message : 'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<Move>>> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::find(const _Other &) const': could not deduce template argument for '_Other'
-          with
-          [
-              _Kty=Move,
-              _Pr=std::less<Move>,
-              _Alloc=std::allocator<Move>
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xtree(1385,25): message : or       'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<Move>>> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::find(const _Other &)'
-          with
-          [
-              _Kty=Move,
-              _Pr=std::less<Move>,
-              _Alloc=std::allocator<Move>
-          ]
-C:\Users\marco\Desktop\chess\chess\chess\testking.h(71,1): message : 'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<Move>>> std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::find(const _Other &)': could not deduce template argument for '_Other'
-          with
-          [
-              _Kty=Move,
-              _Pr=std::less<Move>,
-              _Alloc=std::allocator<Move>
-          ]
-C:\Users\marco\Desktop\chess\chess\chess\testking.h(71,7): message : while trying to match the argument list '(overloaded-function)'
+D:\Programming\CSE231\chess\chess\chess\piece.cpp(60,1): message : see reference to class template instantiation 'std::set<Move,std::less<Move>,std::allocator<Move>>' being compiled
   Generating Code...
