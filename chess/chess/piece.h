@@ -11,7 +11,7 @@
 #include "position.h"
 #include <set>
 // #include "board.h"
-//#include "move.h"
+#include "move.h"
 
 class Board;
 class Move;
@@ -26,7 +26,7 @@ class Piece
 {
 protected:
    Position position;
-   bool isWhite;
+   bool white;
    int nMoves;
    int lastMove;
 
@@ -34,13 +34,14 @@ public:
    Piece();
 //   void assign(Point p);
 //   Point getPosition();
-   bool isWhite() { return isWhite; };
+     bool isWhite() { return white; };
 //   bool isMove();
 //   int getNMoves();
-   Position getPosition() const { return position; };
+   const Position& getPosition() const { return position; };
 //   bool justMoved();
    virtual char getLetter() const = 0;
-//   virtual set<Move> getPossible(Board board) = 0;
+   virtual std::set<Move> getPossible(const Board &board) = 0;
+   bool operator== (char letter) const { return getLetter() == letter; }
 };
 
 /************************
@@ -53,6 +54,7 @@ public:
    Pawn(const Position& coordinate, bool isWhite);
    std::set<Move> getPossible(const Board& board);
    char getLetter() const { return 'p'; }
+   bool isMoved() { return isFirstMove; }
 private:
    bool isFirstMove;
 };
@@ -113,12 +115,13 @@ private:
 //      bool isFirstMove;
 //};
 //
-///************************
-// * SPACE
-// ***********************/
-//class Space : public Piece
-//{
-//public:
-//   Space(string point);
-//   set<Move> getPossible(Board board);
-// };
+/************************
+* SPACE
+***********************/
+class Space : public Piece
+{
+public:
+   Space(const Position& position);
+   std::set<Move> getPossible(const Board& board) { return {}; };
+   char getLetter() const { return ' '; }
+ };

@@ -8,6 +8,8 @@
  ************************************************************************/
 
 #include "piece.h"
+#include "move.h"
+#include "board.h"
 using namespace std;
 /************
 * PIECE
@@ -51,12 +53,47 @@ Piece::Piece() : nMoves(0) {}
 
 Pawn::Pawn(const Position& coordinate, bool isWhite)
 {
-   this->isWhite = isWhite;
+   this->white = isWhite;
    position = Position(coordinate);
    isFirstMove = true;
 }
 
 set<Move> Pawn::getPossible(const Board& board)
 {
-   return set<Move>();
+   set<Move> possible = {};
+   Position posMove(getPosition(), isWhite() ? ADD_R : SUB_R);
+
+   if (board[posMove] == ' ')
+   {
+      Move move;
+      move.setSrc(getPosition());
+      move.setDes(posMove);
+      move.setWhiteMove(isWhite());
+      possible.insert(move);
+   }
+
+   if (!isMoved())
+   {
+      Position posMove(isWhite() ? 3 : 4, getPosition().getCol());
+      Position posCheck(isWhite() ? 2 : 5, getPosition().getCol());
+
+      if (board[posMove] == ' ' && board[posCheck] == ' ')
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         possible.insert(move);
+      }
+   }
+
+   return possible;
+}
+
+/************************
+* SPACE
+***********************/
+Space::Space(const Position& position) 
+{
+   white = true; 
 }

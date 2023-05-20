@@ -79,7 +79,7 @@ class Move
          read(str);
          return *this;
       }
-      
+
 
 private:
       void read(const std::string & s);

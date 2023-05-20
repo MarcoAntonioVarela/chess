@@ -28,7 +28,7 @@ class Board
 //   void free();
 //   void draw();
 
-   // operator overloads
+      // operator overloads
       Piece& operator[] (const Position& point);
       Piece& operator[] (const Position& point) const;
       void operator= (const Piece& piece);

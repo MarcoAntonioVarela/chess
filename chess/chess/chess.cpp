@@ -20,5 +20,6 @@ void runner()
 
 int main()
 {
+   runner();
    std::cout << "All test pass!" << std::endl;
 }

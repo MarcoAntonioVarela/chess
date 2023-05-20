@@ -1,46 +1,6 @@
 ﻿  board.cpp
   chess.cpp
   move.cpp
-D:\Programming\CSE231\chess\chess\chess\move.cpp(36,14): error C2678: binary '[': no operator found which takes a left-hand operand of type 'const Board' (or there is no acceptable conversion)
-D:\Programming\CSE231\chess\chess\chess\board.h(32,14): message : could be 'Piece &Board::operator [](const Position &)'
-D:\Programming\CSE231\chess\chess\chess\move.cpp(36,14): message : while trying to match the argument list '(const Board, Position)'
-D:\Programming\CSE231\chess\chess\chess\move.cpp(39,14): error C2678: binary '[': no operator found which takes a left-hand operand of type 'const Board' (or there is no acceptable conversion)
-D:\Programming\CSE231\chess\chess\chess\board.h(32,14): message : could be 'Piece &Board::operator [](const Position &)'
-D:\Programming\CSE231\chess\chess\chess\move.cpp(39,14): message : while trying to match the argument list '(const Board, Position)'
-D:\Programming\CSE231\chess\chess\chess\move.cpp(42,28): error C2678: binary '[': no operator found which takes a left-hand operand of type 'const Board' (or there is no acceptable conversion)
-D:\Programming\CSE231\chess\chess\chess\board.h(32,14): message : could be 'Piece &Board::operator [](const Position &)'
-D:\Programming\CSE231\chess\chess\chess\move.cpp(42,28): message : while trying to match the argument list '(const Board, Position)'
   piece.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xtree(331,16): error C2079: 'std::_Tree_node<Move,std::_Default_allocator_traits<_Alloc>::void_pointer>::_Myval' uses undefined class 'Move'
-          with
-          [
-              _Alloc=std::allocator<Move>
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xtree(1941,1): message : see reference to class template instantiation 'std::_Tree_node<Move,std::_Default_allocator_traits<_Alloc>::void_pointer>' being compiled
-          with
-          [
-              _Alloc=std::allocator<Move>
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xtree(1937,1): message : while compiling class template member function 'void std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::_Alloc_sentinel_and_proxy(void)'
-          with
-          [
-              _Kty=Move,
-              _Pr=std::less<Move>,
-              _Alloc=std::allocator<Move>
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\xtree(883,34): message : see reference to function template instantiation 'void std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::_Alloc_sentinel_and_proxy(void)' being compiled
-          with
-          [
-              _Kty=Move,
-              _Pr=std::less<Move>,
-              _Alloc=std::allocator<Move>
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\set(52): message : see reference to class template instantiation 'std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>' being compiled
-          with
-          [
-              _Kty=Move,
-              _Pr=std::less<Move>,
-              _Alloc=std::allocator<Move>
-          ]
-D:\Programming\CSE231\chess\chess\chess\piece.cpp(60,1): message : see reference to class template instantiation 'std::set<Move,std::less<Move>,std::allocator<Move>>' being compiled
   Generating Code...
+  chess.vcxproj -> D:\Programming\CSE231\chess\chess\x64\Debug\chess.exe

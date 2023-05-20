@@ -13,6 +13,7 @@
 #include "piece.h"
 #include "board.h"
 #include "move.h"
+#include <set>
 using namespace std;
 
 ///*****************************************************
@@ -24,7 +25,7 @@ class TestPawn
 public:
    void run()
    {
-      //testFirstMoveCanMoveTwoSquares();
+      testFirstMoveCanMoveTwoSquares();
 //      testFirstMoveCantMove();
 //      testNotFirstMoveCanMove();
 //      testNotFirstMoveCantMove();
@@ -64,7 +65,7 @@ private:
 
       // VERIFY
       assert(possible.size() == 2);
-      Move move("e2e3e4");
+      Move move("e2e3");
       assert(possible.find(move) != possible.end());
 
       // TEARDOWN

@@ -8,7 +8,6 @@
  ************************************************************************/
 
 #include "move.h"
-#include "piece.h"
 #include "board.h"
 #include <cassert>
 #include <iostream>
@@ -33,13 +32,13 @@ Move::Move() :
 void Move::complete(const Board& board)
 {
    // set the capture
-   capture = board[dest].getLetter();
+   capture = pieceTypeFromLetter(board[dest].getLetter());
 
    // set the color
    isWhite = board[source].isWhite();
 
    // handle if this is an en-passant
-   if (capture == SPACE && board[source] == PAWN)
+   if (capture == SPACE && pieceTypeFromLetter(board[source].getLetter()) == PAWN)
       enpassant = true;
 }
 
