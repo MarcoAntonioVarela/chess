@@ -17,17 +17,6 @@ using namespace std;
 ************/
 Piece::Piece() : nMoves(0) {}
 
-//void Piece::assign(Point p) {
-//   position = p;
-//}
-
-//void Piece::assign(Piece p) {
-//   position = p.position;
-//   fWhite = p.fWhite;
-//   nMoves = p.nMoves;
-//   lastMove = p.lastMove;
-//}
-
 //bool Piece::isWhite() {
 //   return fWhite;
 //}
@@ -50,7 +39,7 @@ Piece::Piece() : nMoves(0) {}
 
 /************
 * PAWN
-************/ 
+************/
 
 Pawn::Pawn(const Position& coordinate, bool isWhite)
 {
@@ -94,7 +83,7 @@ set<Move> Pawn::getPossible(const Board& board)
       move.setSrc(getPosition());
       move.setDes(posMove);
       move.setWhiteMove(isWhite());
-      move.setPromote(QUEEN); // FIX: How to convert char to PieceType?
+      move.setPromote(QUEEN);
       possible.insert(move);
    }
 

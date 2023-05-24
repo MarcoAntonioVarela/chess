@@ -26,7 +26,7 @@ void Board::reset()
    board[0][7] = new Space(Position("h1"));
 
    // Black pieces
-   board[1][0] = new Pawn(Position("a2"), true);
+   board[1][0] = new Pawn(Position("a1"), true);
    board[1][1] = new Pawn(Position("b2"), true);
    board[1][2] = new Pawn(Position("c2"), true);
    board[1][3] = new Pawn(Position("d2"), true);
@@ -34,7 +34,6 @@ void Board::reset()
    board[1][5] = new Pawn(Position("f2"), true);
    board[1][6] = new Pawn(Position("g2"), true);
    board[1][7] = new Pawn(Position("h2"), true);
-
 
    // Spaces
 
@@ -76,8 +75,6 @@ void Board::reset()
    board[5][5] = new Space(Position("f6"));
    board[5][6] = new Space(Position("g6"));
    board[5][7] = new Space(Position("h6"));
-
-
 
 
    // White pieces

@@ -65,7 +65,7 @@ private:
 
       // VERIFY
       assert(possible.size() == 2);
-      Move move("e2e3");
+      Move move("e2e4");
       assert(possible.find(move) != possible.end());
 
       // TEARDOWN
@@ -178,7 +178,7 @@ private:
 
       // VERIFY
       assert(possible.size()==0);
-      /*assert(possible.find(move) != possible.end());*/
+      //assert(possible.find(move) != possible.end());
 
       // TEARDOWN
    }

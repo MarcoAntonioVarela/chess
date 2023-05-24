@@ -10,7 +10,6 @@
 
 #include "position.h"
 #include <set>
-// #include "board.h"
 #include "move.h"
 
 class Board;
@@ -59,9 +58,9 @@ private:
    bool isFirstMove;
 };
 
-///************************
-// * ROOK
-// ***********************/
+/************************
+* ROOK
+***********************/
 //class Rook : public Piece
 //{
 //   friend TestKing;
@@ -72,9 +71,9 @@ private:
 //      bool isFirstMove;
 //};
 //
-///************************
-// * KNIGHT
-// ***********************/
+/************************
+* KNIGHT
+***********************/
 //class Knight : public Piece
 //{
 //public:
@@ -82,9 +81,9 @@ private:
 //   set<Move> getPossible(Board board);
 //};
 //
-///************************
-// * BISHOP
-// ***********************/
+/************************
+* BISHOP
+***********************/
 //class Bishop : public Piece
 //{
 //public:
@@ -92,9 +91,9 @@ private:
 //   set<Move> getPossible(Board board);
 //};
 //
-///************************
-// * QUEEN
-// ***********************/
+/************************
+* QUEEN
+***********************/
 //class Queen : public Piece
 //{
 //public:
@@ -102,9 +101,9 @@ private:
 //   set<Move> getPossible(Board board);
 //};
 //
-///************************
-// * KING
-// ***********************/
+/************************
+* KING
+***********************/
 //class King : public Piece
 //{
 //   friend TestKing;
