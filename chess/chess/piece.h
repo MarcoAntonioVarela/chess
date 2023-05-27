@@ -14,7 +14,7 @@
 
 class Board;
 class Move;
-//class TestKing;
+class TestKing;
 class TestPawn;
 
 /************************
@@ -62,59 +62,64 @@ private:
 /************************
 * ROOK
 ***********************/
-//class Rook : public Piece
-//{
-//   friend TestKing;
-//public:
-//   Rook(string point, bool white);
-//   set<Move> getPossible(Board board);
-//   private:
-//      bool isFirstMove;
-//};
-//
+class Rook : public Piece
+{
+   friend TestKing;
+public:
+   Rook(const Position& point, bool white);
+   std::set<Move> getPossible(const Board& board);
+   char getLetter() const { return 'r'; }
+   private:
+      bool isFirstMove;
+};
+
 /************************
 * KNIGHT
 ***********************/
-//class Knight : public Piece
-//{
-//public:
-//   Knight(string point, bool white);
-//   set<Move> getPossible(Board board);
-//};
-//
+class Knight : public Piece
+{
+public:
+   Knight(const Position& point, bool white);
+   std::set<Move> getPossible(const Board& board);
+   char getLetter() const { return 'n'; }
+};
+
 /************************
 * BISHOP
 ***********************/
-//class Bishop : public Piece
-//{
-//public:
-//   Bishop(string point, bool white);
-//   set<Move> getPossible(Board board);
-//};
-//
+class Bishop : public Piece
+{
+public:
+   Bishop(const Position& point, bool white);
+   std::set<Move> getPossible(const Board& board);
+   char getLetter() const { return 'b'; }
+};
+
 /************************
 * QUEEN
 ***********************/
-//class Queen : public Piece
-//{
-//public:
-//   Queen(string point, bool white);
-//   set<Move> getPossible(Board board);
-//};
-//
+class Queen : public Piece
+{
+public:
+   Queen(const Position& point, bool white);
+   std::set<Move> getPossible(const Board& board);
+   char getLetter() const { return 'q'; }
+};
+
 /************************
 * KING
 ***********************/
-//class King : public Piece
-//{
-//   friend TestKing;
-//public:
-//   King(string point, bool white);
-//   set<Move> getPossible(Board board);
-//   private:
-//      bool isFirstMove;
-//};
-//
+class King : public Piece
+{
+   friend TestKing;
+public:
+   King(const Position& point, bool white);
+   std::set<Move> getPossible(const Board& board);
+   char getLetter() const { return 'k'; }
+   private:
+      bool isFirstMove;
+};
+
 /**********************
 * SPACE
 ***********************/

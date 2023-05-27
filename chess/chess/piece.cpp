@@ -40,7 +40,6 @@ Piece::Piece() : nMoves(0) {}
 /************
 * PAWN
 ************/
-
 Pawn::Pawn(const Position& coordinate, bool isWhite)
 {
    this->white = isWhite;
@@ -48,6 +47,9 @@ Pawn::Pawn(const Position& coordinate, bool isWhite)
    isFirstMove = true;
 }
 
+/************
+* PAWN::getPossible
+************/
 set<Move> Pawn::getPossible(const Board& board)
 {
    set<Move> possible = {};
@@ -106,7 +108,7 @@ set<Move> Pawn::getPossible(const Board& board)
          move.setSrc(getPosition());
          move.setDes(posMove);
          move.setWhiteMove(isWhite());
-         move.setCapture(board[posMove].getLetter());
+         move.setCapture(move.pieceTypeFromLetter(board[posMove].getLetter()));
 
          possible.insert(move);
       }
@@ -121,4 +123,94 @@ set<Move> Pawn::getPossible(const Board& board)
 Space::Space(const Position& position) 
 {
    white = true; 
+}
+
+/************************
+* ROOK
+***********************/
+Rook::Rook(const Position& point, bool isWhite)
+{
+    this->white = isWhite;
+    position = Position(point);
+    isFirstMove = true;
+}
+
+/************
+* ROOK::getPossible
+************/
+set<Move> Rook::getPossible(const Board& board)
+{
+    return {};
+}
+
+/************************
+* KNIGHT
+***********************/
+Knight::Knight(const Position& point, bool isWhite)
+{
+    this->white = isWhite;
+    position = Position(point);
+}
+
+/************
+* KNIGHT::getPossible
+************/
+set<Move> Knight::getPossible(const Board& board)
+{
+    return {};
+}
+
+
+/************************
+* BISHOP
+***********************/
+Bishop::Bishop(const Position& point, bool isWhite)
+{
+    this->white = isWhite;
+    position = Position(point);
+}
+
+/************
+* BISHOP::getPossible
+************/
+set<Move> Bishop::getPossible(const Board& board)
+{
+    return {};
+}
+
+
+/************************
+* QUEEN
+***********************/
+Queen::Queen(const Position& point, bool isWhite)
+{
+    this->white = isWhite;
+    position = Position(point);
+}
+
+/************
+* QUEEN::getPossible
+************/
+set<Move> Queen::getPossible(const Board& board)
+{
+    return {};
+}
+
+
+/************************
+* KING
+***********************/
+King::King(const Position& point, bool isWhite)
+{
+    this->white = isWhite;
+    position = Position(point);
+    isFirstMove = true;
+}
+
+/************
+* KING::getPossible
+************/
+set<Move> King::getPossible(const Board& board)
+{
+    return {};
 }

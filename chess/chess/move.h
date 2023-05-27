@@ -26,6 +26,10 @@ class Move
   public:
       friend MoveTest;
 
+      // helper functions
+      char letterFromPieceType(PieceType pt) const;
+      PieceType pieceTypeFromLetter(char letter) const;
+
       // constructor
       Move(); 
       Move(const Move & rhs)           { *this = rhs;      }
@@ -80,11 +84,9 @@ class Move
          return *this;
       }
 
-
 private:
       void read(const std::string & s);
-      char letterFromPieceType(PieceType pt) const;
-      PieceType pieceTypeFromLetter(char letter) const;
+
 
       Position  source;    // where the move originated from
       Position  dest;      // where the move finished

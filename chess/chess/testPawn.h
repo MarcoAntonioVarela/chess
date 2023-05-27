@@ -16,10 +16,10 @@
 #include <set>
 using namespace std;
 
-///*****************************************************
-//* TEST PAWN CLASS
-// * A class that contains the Pawn class unit tests
-// *****************************************************/
+/*****************************************************
+* TEST PAWN CLASS
+* A class that contains the Pawn class unit tests
+*****************************************************/
 class TestPawn
 {
 public:
@@ -30,7 +30,7 @@ public:
       testNotFirstMoveCanMove();
       testNotFirstMoveCantMove();
       testPromotion();
-//      testPromotionWithCapture();
+      testPromotionWithCapture();
 //      testEnPassant();
 //      cout << "\nAll the test cases for testPawn.h have been successfull!\n";
    }
@@ -238,24 +238,24 @@ private:
 //    * +---a-b-c-d-e-f-g-h---+
 //    *
 //    *****************************************************/
-//   void testPromotionWithCapture() 
-//   {
-//      // SETUP
-//      Pawn p("e7", true);
-//      Board b;
-//      b = p;
-//
-//      // EXERCISE
-//      set<Move> possible = p.getPossible(b);
-//
-//      // VERIFY
-//      assert(possible.size() == 2);
-//      Move move("e7e8f8");
-//      assert(possible.find(move) != possible.end());
-//
-//      // TEARDOWN
-//
-//   }
+   void testPromotionWithCapture() 
+   {
+      // SETUP
+      Pawn p("e7", true);
+      Board b;
+      b = p;
+
+      // EXERCISE
+      set<Move> possible = p.getPossible(b);
+
+      // VERIFY
+      assert(possible.size() == 2);
+      Move move("e7f8");
+      assert(possible.find(move) != possible.end());
+
+      // TEARDOWN
+
+   }
    /*****************************************************
     * TESTING: En passant
     *
