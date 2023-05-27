@@ -98,6 +98,13 @@ void Board::reset()
 
 }
 
+void Board::swap(Position& point1, Position& point2)
+{
+   Piece* temp = board[point1.getRow()][point1.getCol()];
+   board[point1.getRow()][point1.getCol()] = board[point2.getRow()][point2.getCol()];
+   board[point2.getRow()][point2.getCol()] = temp;
+}
+
 Piece& Board::operator[](const Position& point)
 {
    return *board[point.getRow()][point.getCol()];
@@ -112,4 +119,9 @@ Piece& Board::operator[](const Position& point) const
 void Board::operator=(Piece& piece)
 {
    board[piece.getPosition().getRow()][piece.getPosition().getCol()] = &piece;
+}
+
+void Board::operator-=(const Position& position)
+{
+   board[position.getRow()][position.getCol()] = new Space(position);
 }

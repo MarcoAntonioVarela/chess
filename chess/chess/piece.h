@@ -41,6 +41,7 @@ public:
    virtual char getLetter() const = 0;
    virtual std::set<Move> getPossible(const Board &board) = 0;
    bool operator== (char letter) const { return getLetter() == letter; }
+   bool operator!= (char letter) { return getLetter() != letter; }
 };
 
 /************************

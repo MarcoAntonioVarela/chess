@@ -9,21 +9,22 @@
 #pragma once
 #include "piece.h"
 
+class ogstream;
+
 class Board
 {
    private:
-
       Piece* board[8][8];
-//   int currentMove;
+     int currentMove;
 //   ogstream gout;
-//   void swap(Point& point1, Point& point2);
+     void swap(Position& point1, Position& point2);
 //   bool assertBoard();
 
    public:
       Board();
-//   // Board(ogstream gout, bool reset=false);
-//   int getCurrentMove() { return currentMove; }
-//   bool isWhiteTurn() { return currentMove % 2 == 0; }
+      Board(ogstream gout, void reset());
+      int getCurrentMove() { return currentMove; }
+      bool isWhiteTurn() { return currentMove % 2 == 0; }
       void reset(); // Pieces back to the original position.
 //   void free();
 //   void draw();
@@ -32,5 +33,5 @@ class Board
       Piece& operator[] (const Position& point);
       Piece& operator[] (const Position& point) const;
       void operator= (Piece& piece);
-//   void operator -= (const Point& point); // Kill
+      void operator -= (const Position& position); // Kill
 };

@@ -53,6 +53,7 @@ set<Move> Pawn::getPossible(const Board& board)
    set<Move> possible = {};
    Position posMove(getPosition(), isWhite() ? ADD_R : SUB_R);
 
+   // Regular movement
    if (posMove.isValid() && board[posMove] == ' ')
    {
       Move move;
@@ -62,6 +63,7 @@ set<Move> Pawn::getPossible(const Board& board)
       possible.insert(move);
    }
 
+   // Double space for first move
    if (!isMoved())
    {
       Position posMove(isWhite() ? 3 : 4, getPosition().getCol());
@@ -77,6 +79,8 @@ set<Move> Pawn::getPossible(const Board& board)
       }
    }
 
+
+   // Promotion
    if (posMove.getRow() == (isWhite() ? 7 : 0))
    {
       Move move;
@@ -88,7 +92,7 @@ set<Move> Pawn::getPossible(const Board& board)
    }
 
    // capture
-   /*const int cDelta[] = { 1, -1 };
+   const int cDelta[] = { 1, -1 };
    for (int i = 0; i < 2; i++)
    {
       Position posMove(position.getRow() + (isWhite() ? 1 : -1),
@@ -106,7 +110,7 @@ set<Move> Pawn::getPossible(const Board& board)
 
          possible.insert(move);
       }
-   }*/
+   }
 
    return possible;
 }
