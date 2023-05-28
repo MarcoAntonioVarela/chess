@@ -15,27 +15,7 @@ using namespace std;
 /************
 * PIECE
 ************/
-Piece::Piece() : nMoves(0) {}
-
-//bool Piece::isWhite() {
-//   return fWhite;
-//}
-
-//bool Piece::isMove() {
-//   return nMoves > 0;
-//}
-
-//int Piece::getNMoves() {
-//   return nMoves;
-//}
-//
-//Point Piece::getPosition() {
-//   return position;
-//}
-//
-//bool Piece::justMoved() {
-//   return lastMove == nMoves - 1;
-//}
+Piece::Piece() : nMoves(0), lastMove(0) {}
 
 /************
 * PAWN
@@ -66,7 +46,7 @@ set<Move> Pawn::getPossible(const Board& board)
    }
 
    // Double space for first move
-   if (!isMoved())
+   if (!isMoved() && posMove.isValid())
    {
       Position posMove(isWhite() ? 3 : 4, getPosition().getCol());
       Position posCheck(isWhite() ? 2 : 5, getPosition().getCol());
@@ -80,7 +60,6 @@ set<Move> Pawn::getPossible(const Board& board)
          possible.insert(move);
       }
    }
-
 
    // Promotion
    if (posMove.getRow() == (isWhite() ? 7 : 0))
@@ -113,6 +92,9 @@ set<Move> Pawn::getPossible(const Board& board)
          possible.insert(move);
       }
    }
+
+   // en-passant
+
 
    return possible;
 }

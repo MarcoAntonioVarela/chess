@@ -30,8 +30,9 @@ public:
       testNotFirstMoveCanMove();
       testNotFirstMoveCantMove();
       testPromotion();
-      testPromotionWithCapture();
-//      testEnPassant();
+      testCapture();
+      testEnPassant();
+//      testPromotionWithCapture();
 //      cout << "\nAll the test cases for testPawn.h have been successfull!\n";
    }
 private:
@@ -106,7 +107,6 @@ private:
       // assert(possible.find(move) == possible.end());
 
       // TEARDOWN
-
    }
 
    /*****************************************************
@@ -221,41 +221,47 @@ private:
       // TEARDOWN
 
    }
-//   /*****************************************************
-//    * TESTING: Promotion with capture
-//    *
-//    * +---a-b-c-d-e-f-g-h---+
-//    * |                     |
-//    * 8   R N B Q * B N R   8
-//    * 7   P P P P(p)P P P   7
-//    * 6                     6
-//    * 5                     5
-//    * 4                     4
-//    * 3                     3
-//    * 2   p   p p p p p p   2
-//    * 1   r n b q k b n r   1
-//    * |                     |
-//    * +---a-b-c-d-e-f-g-h---+
-//    *
-//    *****************************************************/
-   void testPromotionWithCapture() 
+
+   /*****************************************************
+    * TESTING: Capture
+    *
+    * +---a-b-c-d-e-f-g-h---+
+    * |                     |
+    * 8   R N B Q K B N R   8
+    * 7   P P P P   P P P   7
+    * 6                     6
+    * 5                     5
+    * 4                     4
+    * 3         P   P       3
+    * 2   p p p p(p)p p p   2
+    * 1   r n b q k b n r   1
+    * |                     |
+    * +---a-b-c-d-e-f-g-h---+
+    *
+    *****************************************************/
+   void testCapture()
    {
       // SETUP
-      Pawn p("e7", true);
+      Pawn p("e2", true);
+      p.isFirstMove = true;
+      Pawn p2("f3", false);
+      Pawn p3("d3", false);
       Board b;
       b = p;
+      b = p2;
+      b = p3;
 
       // EXERCISE
       set<Move> possible = p.getPossible(b);
 
       // VERIFY
-      assert(possible.size() == 2);
-      Move move("e7f8");
+      assert(possible.size() == 4);
+      Move move("e2f3");
       assert(possible.find(move) != possible.end());
 
       // TEARDOWN
-
    }
+
    /*****************************************************
     * TESTING: En passant
     *
@@ -273,25 +279,59 @@ private:
     * +---a-b-c-d-e-f-g-h---+
     *
     *****************************************************/
-   //void testEnPassant()
-   //{
-   //   // SETUP
-   //   Pawn p("e5", true);
-   //   p.isFirstMove = false;
-   //   Pawn p2("d5", false);
-   //   Board b;
-   //   b = p;
-   //   b = p2;
+   void testEnPassant()
+   {
+      // SETUP
+      Pawn p("e5", true);
+      p.isFirstMove = false;
+      Pawn p2("d5", false);
+      Board b;
+      b = p;
+      b = p2;
 
-   //   // EXERCISE
-   //   set<Move> possible = p.getPossible(b);
+      // EXERCISE
+      set<Move> possible = p.getPossible(b);
 
-   //   // VERIFY
-   //   assert(possible.size() == 2);
-   //   Move move("e5d6p");
-   //   assert(possible.find(move) != possible.end());
+      // VERIFY
+      assert(possible.size() == 2);
+      Move move("e5d6p");
+      assert(possible.find(move) != possible.end());
 
    //   // TEARDOWN
-   //}
+   }
 
+   /*****************************************************
+    * TESTING: Promotion with capture
+    *
+    * +---a-b-c-d-e-f-g-h---+
+    * |                     |
+    * 8   R N B Q * B N R   8
+    * 7   P P P P(p)P P P   7
+    * 6                     6
+    * 5                     5
+    * 4                     4
+    * 3                     3
+    * 2   p   p p p p p p   2
+    * 1   r n b q k b n r   1
+    * |                     |
+    * +---a-b-c-d-e-f-g-h---+
+    *
+    *****************************************************/
+    //void testPromotionWithCapture() 
+    //{
+    //   // SETUP
+    //   Pawn p("e7", true);
+    //   Board b;
+    //   b = p;
+
+    //   // EXERCISE
+    //   set<Move> possible = p.getPossible(b);
+
+    //   // VERIFY
+    //   assert(possible.size() == 3);
+    //   Move move("e7f8bq");
+    //   assert(possible.find(move) != possible.end());
+
+    //   // TEARDOWN
+    //}
 };

@@ -12,8 +12,7 @@
 #include <set>
 #include "move.h"
 
-class Board;
-class Move;
+class Board;   
 class TestKing;
 class TestPawn;
 
@@ -23,25 +22,28 @@ class TestPawn;
  ***********************/
 class Piece 
 {
-protected:
-   Position position;
-   bool white;
-   int nMoves;
-   int lastMove;
+   protected:
+      Position position;
+      bool white;
+      int nMoves;
+      int lastMove;
 
-public:
-   Piece();
-//   void assign(Point p);
-//   Point getPosition();
-     bool isWhite() { return white; };
-//   bool isMove();
-//   int getNMoves();
-   const Position& getPosition() const { return position; };
-//   bool justMoved();
-   virtual char getLetter() const = 0;
-   virtual std::set<Move> getPossible(const Board &board) = 0;
-   bool operator== (char letter) const { return getLetter() == letter; }
-   bool operator!= (char letter) { return getLetter() != letter; }
+   public:
+
+      // constructor
+      Piece();
+
+      // getters
+      bool isWhite() { return white; };
+      bool isMove() { return nMoves > 0; };
+      int getNMoves() { return nMoves; };
+      const Position& getPosition() const { return position; }
+      virtual char getLetter() const = 0;
+      virtual std::set<Move> getPossible(const Board &board) = 0;
+
+      // operator overloads
+      bool operator== (char letter) const { return getLetter() == letter; }
+      bool operator!= (char letter) { return getLetter() != letter; }
 };
 
 /************************
