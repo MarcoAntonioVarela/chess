@@ -88,13 +88,34 @@ set<Move> Pawn::getPossible(const Board& board)
          move.setDes(posMove);
          move.setWhiteMove(isWhite());
          move.setCapture(move.pieceTypeFromLetter(board[posMove].getLetter()));
-
          possible.insert(move);
       }
    }
 
    // en-passant
+   for (int i = 0; i < 2; i++)
+   {
+      Position posMove(position.getRow() + (isWhite() ? 1 : -1),
+         position.getCol() + cDelta[i]);
+      Position posKill(position.getRow(),
+         position.getCol() + cDelta[i]);
 
+      if (posMove.isValid() &&
+         position.getRow() == (isWhite() ? 4 : 3) &&
+         board[posMove] == ' ' &&
+         board[posKill] == 'p' &&
+         board[posKill].isWhite() != isWhite() &&
+         board[posKill].getNMoves() == 1)
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         move.setCapture(PAWN);
+         move.setEnPassant();
+         possible.insert(move);
+      }
+   }
 
    return possible;
 }

@@ -269,7 +269,7 @@ private:
     * |                     |
     * 8   R N B Q K B N R   8
     * 7   P P P     P P P   7
-    * 6         * *         6
+    * 6         * P         6
     * 5         P(p)        5
     * 4                     4
     * 3                     3
@@ -285,16 +285,19 @@ private:
       Pawn p("e5", true);
       p.isFirstMove = false;
       Pawn p2("d5", false);
+      p2.nMoves = 1;
+      Pawn p3("e6", false);
       Board b;
       b = p;
       b = p2;
-
+      b = p3;
+      
       // EXERCISE
       set<Move> possible = p.getPossible(b);
 
       // VERIFY
-      assert(possible.size() == 2);
-      Move move("e5d6p");
+      assert(possible.size() == 1);
+      Move move("e5d6pE");
       assert(possible.find(move) != possible.end());
 
    //   // TEARDOWN
