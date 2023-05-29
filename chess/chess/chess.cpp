@@ -27,7 +27,7 @@ void callBack(Interface* pUI, void* p)
    board->drawPieces();
 }
 
-int main()
+int main() 
 {
    Interface ui("Chess");
 

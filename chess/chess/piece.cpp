@@ -142,6 +142,10 @@ Space::Space(const Position& position) { white = true; }
 void Space::draw(ogstream& gout) {}
 void Space::drawPossible(std::set<Move> possible, ogstream& gout) {}
 
+void Space::draw(ogstream& gout)
+{
+}
+
 /************************
 * ROOK
 ***********************/
@@ -170,7 +174,7 @@ void Rook::drawPossible(std::set<Move> possible, ogstream& gout)
 }
 
 /************************
-* KNIGHT
+* KNIGHT Marco
 ***********************/
 Knight::Knight(const Position& point, bool isWhite)
 {
@@ -183,7 +187,10 @@ Knight::Knight(const Position& point, bool isWhite)
 ************/
 set<Move> Knight::getPossible(const Board& board)
 {
-    return {};
+
+   //cambiar el return por el set de possibles
+    set<Move> possible = {};
+    return possible;
 }
 
 void Knight::draw(ogstream& gout)
@@ -197,7 +204,7 @@ void Knight::drawPossible(std::set<Move> possible, ogstream& gout)
 
 
 /************************
-* BISHOP
+* BISHOP Marco
 ***********************/
 Bishop::Bishop(const Position& point, bool isWhite)
 {
@@ -213,6 +220,9 @@ set<Move> Bishop::getPossible(const Board& board)
     return {};
 }
 
+/************************
+* KING Marco
+=======
 void Bishop::draw(ogstream& gout)
 {
    gout.drawBishop(position, isWhite());
@@ -252,6 +262,7 @@ void Queen::drawPossible(std::set<Move> possible, ogstream& gout)
 
 /************************
 * KING
+>>>>>>> a43a14ca1d519e1ab637bdc92ed5e584472814a0
 ***********************/
 King::King(const Position& point, bool isWhite)
 {
@@ -265,14 +276,99 @@ King::King(const Position& point, bool isWhite)
 ************/
 set<Move> King::getPossible(const Board& board)
 {
-    return {};
+   set<Move>possible = {};
+
+   const Delta delta[] =
+
+   {
+      {-1,1},   {0,1},  {1,1},
+      {-1,0},           {1,0},
+      {-1,- 1},{0,-1},  {1,-1}
+   };
+   
+   for (int i = 0; i < 9; i++)
+   {
+      Position posMove(position.getRow() + delta[i][0],
+         position.getCol() + delta[i][1]);
+      
+      //To capture enemy piece
+      if (posMove.isValid() &&
+         board[posMove] != ' ' &&
+         board[posMove].isWhite() != isWhite())
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         move.setCapture(move.pieceTypeFromLetter(board[posMove].getLetter()));
+         possible.insert(move);
+      }
+
+      //Empty space move
+      if (posMove.isValid() &&
+         board[posMove] == ' ' )
+
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         possible.insert(move);
+      }
+
+      //Agregar castling
+
+     
+   }
+
+
+
+   return possible;
 }
 
-void King::draw(ogstream& gout)
+
+
+
+/************************
+* QUEEN Marco
+***********************/
+Queen::Queen(const Position& point, bool isWhite)
+{
+   this->white = isWhite;
+   position = Position(point);
+}
+
+/************
+* QUEEN::getPossible
+************/
+set<Move> Queen::getPossible(const Board& board)
+{
+
+   return {};
+}
+
+//
+///************************
+//* QUEEN Marco
+//***********************/
+//Queen::Queen(const Position& point, bool isWhite)
+//{
+//   this->white = isWhite;
+//   position = Position(point);
+//}
+//
+///************
+//* QUEEN::getPossible
+//************/
+//set<Move> Queen::getPossible(const Board& board)
+//{
+//   return {};
+//}
+=======
+void King::draw(ogstream & gout)
 {
    gout.drawKing(position, isWhite());
 }
-
 void King::drawPossible(std::set<Move> possible, ogstream& gout)
 {
 }

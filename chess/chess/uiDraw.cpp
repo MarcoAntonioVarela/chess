@@ -53,7 +53,7 @@ const int RGB_WHITE_SQUARE[] = { 181, 135, 99 };
 const int RGB_BLACK_SQUARE[] = { 240, 218, 181 };
 
 // the color of a selected square
-const int RGB_SELECTED[] = { 0, 0, 255 };
+const int RGB_SELECTED[] = { 255, 165, 0 };
 
 /*************************************************************************
  * DISPLAY the text in the buffer on the screen
