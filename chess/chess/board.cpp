@@ -94,6 +94,11 @@ void Board::reset()
    board[7][7] = new Rook(Position("h1"), true);
 }
 
+void Board::draw()
+{
+   gout.drawBoard();
+}
+
 void Board::swap(Position& point1, Position& point2)
 {
    Piece* temp = board[point1.getRow()][point1.getCol()];

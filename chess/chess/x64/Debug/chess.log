@@ -1,10 +1,2 @@
-﻿  board.cpp
-  chess.cpp
-  move.cpp
-  piece.cpp
-  position.cpp
-  test.cpp
-  uiDraw.cpp
-  uiInteract.cpp
-  Generating Code...
+﻿  chess.cpp
   chess.vcxproj -> D:\Programming\CSE231\chess\chess\x64\Debug\chess.exe
