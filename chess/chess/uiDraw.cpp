@@ -41,7 +41,7 @@
 #include "uiDraw.h"
 #include "uiInteract.h"
 #include "position.h"
-
+#include "move.h"
 using namespace std;
 
 // pieces: black and white
@@ -392,15 +392,11 @@ void ogstream::drawHover(int pos)
 * Highlight a chess square:
 *   INPUT  location  The location of the selected square
 ************************************************************************/
-void ogstream::drawPossible(int pos)
+void ogstream::drawPossible(const Move& move)
 {
-   // do nothing if there is nothing to do
-   if (pos < 0 || pos >= 64)
-      return;
-
-   // find the row and column
-   int row = pos / 8;
-   int col = pos % 8;
+   // get the row and column
+   int row = move.getDes().getRow();
+   int col = move.getDes().getCol();
 
    // set the color and drawing style
    glBegin(GL_QUADS);

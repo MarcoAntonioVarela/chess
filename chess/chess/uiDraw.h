@@ -15,6 +15,7 @@
 using std::string;
 
 class Position;
+class Move;
 
  /*************************************************************************
   * GRAPHICS STREAM
@@ -45,7 +46,7 @@ public:
     virtual void drawBoard();
     virtual void drawSelected(int position);
     virtual void drawHover(   int position);
-    virtual void drawPossible(int position);
+    virtual void drawPossible(const Move& move);
 
 protected:
     int x; // location of text on the screen

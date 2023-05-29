@@ -125,17 +125,22 @@ void Pawn::draw(ogstream& gout)
    gout.drawPawn(position, isWhite());
 }
 
+void Pawn::drawPossible(std::set<Move> possible, ogstream& gout)
+{
+   set <Move> ::iterator it;
+   for (it = possible.begin(); it != possible.end(); ++it)
+      gout.drawPossible(*it);
+}
+
 /************************
 * SPACE
 ***********************/
-Space::Space(const Position& position) 
-{
-   white = true; 
-}
+Space::Space(const Position& position) { white = true; }
 
-void Space::draw(ogstream& gout)
-{
-}
+// They need to be initialized because of the 
+// pure virtual, but they will not do anything.
+void Space::draw(ogstream& gout) {}
+void Space::drawPossible(std::set<Move> possible, ogstream& gout) {}
 
 /************************
 * ROOK
@@ -160,6 +165,10 @@ void Rook::draw(ogstream& gout)
    gout.drawRook(position, isWhite());
 }
 
+void Rook::drawPossible(std::set<Move> possible, ogstream& gout)
+{
+}
+
 /************************
 * KNIGHT
 ***********************/
@@ -180,6 +189,10 @@ set<Move> Knight::getPossible(const Board& board)
 void Knight::draw(ogstream& gout)
 {
    gout.drawKnight(position, isWhite());
+}
+
+void Knight::drawPossible(std::set<Move> possible, ogstream& gout)
+{
 }
 
 
@@ -205,6 +218,10 @@ void Bishop::draw(ogstream& gout)
    gout.drawBishop(position, isWhite());
 }
 
+void Bishop::drawPossible(std::set<Move> possible, ogstream& gout)
+{
+}
+
 
 /************************
 * QUEEN
@@ -226,6 +243,10 @@ set<Move> Queen::getPossible(const Board& board)
 void Queen::draw(ogstream& gout)
 {
    gout.drawQueen(position, isWhite());
+}
+
+void Queen::drawPossible(std::set<Move> possible, ogstream& gout)
+{
 }
 
 
@@ -250,4 +271,8 @@ set<Move> King::getPossible(const Board& board)
 void King::draw(ogstream& gout)
 {
    gout.drawKing(position, isWhite());
+}
+
+void King::drawPossible(std::set<Move> possible, ogstream& gout)
+{
 }

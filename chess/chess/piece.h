@@ -44,6 +44,7 @@ class Piece
 
       // drawing
       virtual void draw(ogstream& gout) = 0;
+      virtual void drawPossible(std::set<Move> possible, ogstream& gout) = 0;
 
       // operator overloads
       bool operator== (char letter) const { return getLetter() == letter; }
@@ -62,6 +63,7 @@ public:
    char getLetter() const { return 'p'; }
    bool isMoved() { return !isFirstMove; }
    void draw(ogstream& gout);
+   void drawPossible(std::set<Move> possible, ogstream& gout);
 private:
    bool isFirstMove;
 };
@@ -77,6 +79,7 @@ public:
    std::set<Move> getPossible(const Board& board);
    char getLetter() const { return 'r'; }
    void draw(ogstream& gout);
+   void drawPossible(std::set<Move> possible, ogstream& gout);
    private:
       bool isFirstMove;
 };
@@ -91,6 +94,7 @@ public:
    std::set<Move> getPossible(const Board& board);
    char getLetter() const { return 'n'; }
    void draw(ogstream& gout);
+   void drawPossible(std::set<Move> possible, ogstream& gout);
 };
 
 /************************
@@ -103,6 +107,7 @@ public:
    std::set<Move> getPossible(const Board& board);
    char getLetter() const { return 'b'; }
    void draw(ogstream& gout);
+   void drawPossible(std::set<Move> possible, ogstream& gout);
 };
 
 /************************
@@ -115,6 +120,7 @@ public:
    std::set<Move> getPossible(const Board& board);
    char getLetter() const { return 'q'; }
    void draw(ogstream& gout);
+   void drawPossible(std::set<Move> possible, ogstream& gout);
 };
 
 /************************
@@ -128,6 +134,7 @@ public:
    std::set<Move> getPossible(const Board& board);
    char getLetter() const { return 'k'; }
    void draw(ogstream& gout);
+   void drawPossible(std::set<Move> possible, ogstream& gout);
    private:
       bool isFirstMove;
 };
@@ -142,4 +149,5 @@ public:
    std::set<Move> getPossible(const Board& board) { return {}; }
    char getLetter() const { return ' '; }
    void draw(ogstream& gout);
+   void drawPossible(std::set<Move> possible, ogstream& gout);
  };

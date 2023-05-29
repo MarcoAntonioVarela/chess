@@ -1,2 +1,6 @@
-﻿  chess.cpp
+﻿  board.cpp
+  chess.cpp
+  move.cpp
+  piece.cpp
+  Generating Code...
   chess.vcxproj -> D:\Programming\CSE231\chess\chess\x64\Debug\chess.exe

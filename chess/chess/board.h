@@ -20,12 +20,11 @@ class Board
 
    public:
       Board();
-      Board(ogstream gout, void reset());
       int getCurrentMove() { return currentMove; }
       bool isWhiteTurn() { return currentMove % 2 == 0; }
       void reset(); // Pieces back to the original position.
-//   void free();
-      void draw();
+      void drawBoard();
+      void drawPieces();
 
       // operator overloads
       Piece& operator[] (const Position& point);
