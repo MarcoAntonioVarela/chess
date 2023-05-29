@@ -40,6 +40,7 @@
 
 #include "uiDraw.h"
 #include "uiInteract.h"
+#include "position.h"
 
 using namespace std;
 
@@ -120,18 +121,18 @@ void glColor(const int * rgb)
 * DRAW Piece
 * Draw a piece at a certain location on the board
 *   INPUT  location   The location of the piece
-*          black      Whether the piece is black
+*          black      Whether the piece is white
 *          rectangles The rectangles of the piece
 *************************************************************************/
-void ogstream::drawPiece(int x, int y, bool black, Rect rectangle[], int num) const
+void ogstream::drawPiece(Position& pos, bool white, Rect rectangle[], int num) const
 {
    
-   GLint xGL = (GLint)(x + 16 /* half a square width */);
-   GLint yGL = (GLint)(y + 16 /* half a square height*/);
+   GLint xGL = (GLint)(pos.getX() + 16 /* half a square width */);
+   GLint yGL = (GLint)(pos.getY() + 16 /* half a square height*/);
 
    // get ready to draw
    glBegin(GL_QUADS);
-   glColor(black ? RGB_BLACK : RGB_WHITE);
+   glColor(white ? RGB_WHITE : RGB_BLACK);
 
    // iterate through the rectangles
    for (int i = 0; i < num; i++)
@@ -152,7 +153,7 @@ void ogstream::drawPiece(int x, int y, bool black, Rect rectangle[], int num) co
 *   INPUT  location  The location of the king
 *          black     Whether the king is black
 *************************************************************************/
-void ogstream::drawKing(int pos, bool black)
+void ogstream::drawKing(Position& pos, bool black)
 {
    Rect rectangles[] =
    {
@@ -165,7 +166,7 @@ void ogstream::drawKing(int pos, bool black)
       { 8,-6, -8,-6, -8,-8,  8,-8}     // base
    };
    
-   drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 7);
+   //drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 7);
 }
 
 /************************************************************************
@@ -189,7 +190,7 @@ void ogstream::drawQueen(int pos, bool black)
       { 8,-6, -8,-6, -8,-8,  8,-8}      // base
    };
 
-   drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 9);
+   //drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 9);
 }
 
 /************************************************************************
@@ -209,7 +210,7 @@ void ogstream::drawRook(int pos, bool black)
       { 6,-6, -6,-6, -6,-8,  6,-8}   // base
    };
 
-   drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 5);
+   //drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 5);
 }
 
 /************************************************************************
@@ -230,7 +231,7 @@ void ogstream::drawKnight(int pos, bool black)
    
    };
 
-   drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 5);
+   //drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 5);
 }
 
 /************************************************************************
@@ -251,7 +252,7 @@ void ogstream::drawBishop(int pos, bool black)
       { 6,-6, -6,-6, -6,-8,  6,-8}    // base
    };
 
-   drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 6);
+   //drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 6);
 }
 
 /************************************************************************
@@ -260,7 +261,7 @@ void ogstream::drawBishop(int pos, bool black)
 *   INPUT  location  The location of the pawn
 *          black     Whether the pawn is black
 *************************************************************************/
-void ogstream::drawPawn(int pos, bool black)
+void ogstream::drawPawn(Position& pos, bool white)
 {
    Rect rectangles[] =
    {
@@ -270,7 +271,8 @@ void ogstream::drawPawn(int pos, bool black)
       { 4,-3, -4,-3, -4,-5, 4,-5}  // base
    };
 
-   drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 4);
+   drawPiece(pos, white, rectangles, 4);
+   // drawPiece(xFromPosition(pos), yFromPosition(pos), white, rectangles, 4);
 }
 
 /************************************************************************

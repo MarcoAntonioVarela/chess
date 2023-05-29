@@ -2,7 +2,7 @@
  * Header File:
  *    User Interface Draw : put pixels on the screen
  * Author:
- *    Br. Helfrich
+ *    Br. Helfrich and Efrain Gomez
  * Summary:
  *    This is the code necessary to draw on the screen. ogstream works
  *    much like COUT except it also has some convenient methods for
@@ -13,6 +13,8 @@
 
 #include <sstream>    // for OSTRINGSTRING
 using std::string;
+
+class Position;
 
  /*************************************************************************
   * GRAPHICS STREAM
@@ -32,10 +34,10 @@ public:
 
 
     // Methods to draw the chess pieces on the screen
-    virtual void drawKing(  int position, bool black);
+    virtual void drawKing(  Position& pos, bool black);
     virtual void drawQueen( int position, bool black);
     virtual void drawRook(  int position, bool black);
-    virtual void drawPawn(  int position, bool black);
+    virtual void drawPawn(  Position& pos, bool black);
     virtual void drawBishop(int position, bool black);
     virtual void drawKnight(int position, bool black);
 
@@ -64,7 +66,7 @@ private:
     };
    
     // Draw a piece with a collection of rectangles
-    void drawPiece(int x, int y, bool black, Rect rectangle[], int num) const;
+    void drawPiece(Position& pos, bool black, Rect rectangle[], int num) const;
 
     // Put text at location X, Y
     void drawText(int x, int y, const char* text) const;

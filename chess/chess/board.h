@@ -15,7 +15,6 @@ class Board
    private:
       Piece* board[8][8];
      int currentMove;
-     ogstream gout;
      void swap(Position& point1, Position& point2);
 //   bool assertBoard();
 

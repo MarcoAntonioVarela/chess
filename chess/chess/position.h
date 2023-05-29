@@ -29,7 +29,7 @@ const Delta ADD_C = { 0,  1};
 const Delta SUB_R = {-1,  0};
 const Delta SUB_C = { 0, -1};
 
-// const int PIXELS_PER_SQUARE = 32;
+const int PIXELS_PER_SQUARE = 32;
 
 class PositionTest;
 
@@ -131,4 +131,4 @@ private:
 
 ostream & operator << (ostream & out, const Position & pos);
 istream & operator >> (istream & in,  Position & pos);
-      
+

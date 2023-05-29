@@ -120,12 +120,21 @@ set<Move> Pawn::getPossible(const Board& board)
    return possible;
 }
 
+void Pawn::draw(ogstream& gout)
+{
+   gout.drawPawn(position, isWhite());
+}
+
 /************************
 * SPACE
 ***********************/
 Space::Space(const Position& position) 
 {
    white = true; 
+}
+
+void Space::draw(ogstream& gout)
+{
 }
 
 /************************
@@ -146,6 +155,10 @@ set<Move> Rook::getPossible(const Board& board)
     return {};
 }
 
+void Rook::draw(ogstream& gout)
+{
+}
+
 /************************
 * KNIGHT
 ***********************/
@@ -161,6 +174,10 @@ Knight::Knight(const Position& point, bool isWhite)
 set<Move> Knight::getPossible(const Board& board)
 {
     return {};
+}
+
+void Knight::draw(ogstream& gout)
+{
 }
 
 
@@ -181,6 +198,10 @@ set<Move> Bishop::getPossible(const Board& board)
     return {};
 }
 
+void Bishop::draw(ogstream& gout)
+{
+}
+
 
 /************************
 * QUEEN
@@ -197,6 +218,10 @@ Queen::Queen(const Position& point, bool isWhite)
 set<Move> Queen::getPossible(const Board& board)
 {
     return {};
+}
+
+void Queen::draw(ogstream& gout)
+{
 }
 
 
@@ -216,4 +241,8 @@ King::King(const Position& point, bool isWhite)
 set<Move> King::getPossible(const Board& board)
 {
     return {};
+}
+
+void King::draw(ogstream& gout)
+{
 }
