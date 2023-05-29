@@ -75,23 +75,34 @@ void Board::reset()
    board[5][7] = new Space(Position("h3"));
 
    // White pieces
-   board[6][0] = new Pawn(Position("a1"), true);
-   board[6][1] = new Pawn(Position("b1"), true);
-   board[6][2] = new Pawn(Position("c1"), true);
-   board[6][3] = new Pawn(Position("d1"), true);
-   board[6][4] = new Pawn(Position("e1"), true);
-   board[6][5] = new Pawn(Position("f1"), true);
-   board[6][6] = new Pawn(Position("g1"), true);
-   board[6][7] = new Pawn(Position("h1"), true);
+   board[6][0] = new Pawn(Position("a2"), true);
+   board[6][1] = new Pawn(Position("b2"), true);
+   board[6][2] = new Pawn(Position("c2"), true);
+   board[6][3] = new Pawn(Position("d2"), true);
+   board[6][4] = new Pawn(Position("e2"), true);
+   board[6][5] = new Pawn(Position("f2"), true);
+   board[6][6] = new Pawn(Position("g2"), true);
+   board[6][7] = new Pawn(Position("h2"), true);
 
-   board[7][0] = new Rook(Position("a2"), true);
-   board[7][1] = new Knight(Position("b2"), true);
-   board[7][2] = new Bishop(Position("c2"), true);
-   board[7][3] = new Queen(Position("d2"), true);
-   board[7][4] = new King(Position("e2"), true);
-   board[7][5] = new Bishop(Position("f"), true);
-   board[7][6] = new Knight(Position("g2"), true);
-   board[7][7] = new Rook(Position("h2"), true);
+   board[7][0] = new Rook(Position("a1"), true);
+   board[7][1] = new Knight(Position("b1"), true);
+   board[7][2] = new Bishop(Position("c1"), true);
+   board[7][3] = new Queen(Position("d1"), true);
+   board[7][4] = new King(Position("e1"), true);
+   board[7][5] = new Bishop(Position("f1"), true);
+   board[7][6] = new Knight(Position("g1"), true);
+   board[7][7] = new Rook(Position("h1"), true);
+}
+
+void Board::draw()
+{
+   ogstream gout;
+   gout.drawBoard();
+   
+   // Drawing all the pieces on the board
+   for (int i = 0; i < 8; i++)
+      for (int j = 0; j < 8; j++)
+         board[i][j]->draw(gout);
 }
 
 void Board::swap(Position& point1, Position& point2)

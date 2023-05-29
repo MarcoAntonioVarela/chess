@@ -12,10 +12,10 @@
 #include <set>
 #include "move.h"
 
-class Board;
-class Move;
+class Board;   
 class TestKing;
 class TestPawn;
+class ogstream;
 
 /************************
  * PIECE
@@ -23,25 +23,31 @@ class TestPawn;
  ***********************/
 class Piece 
 {
-protected:
-   Position position;
-   bool white;
-   int nMoves;
-   int lastMove;
+   protected:
+      Position position;
+      bool white;
+      int nMoves;
+      int lastMove;
 
-public:
-   Piece();
-//   void assign(Point p);
-//   Point getPosition();
-     bool isWhite() { return white; };
-//   bool isMove();
-//   int getNMoves();
-   const Position& getPosition() const { return position; };
-//   bool justMoved();
-   virtual char getLetter() const = 0;
-   virtual std::set<Move> getPossible(const Board &board) = 0;
-   bool operator== (char letter) const { return getLetter() == letter; }
-   bool operator!= (char letter) { return getLetter() != letter; }
+   public:
+
+      // constructor
+      Piece();
+
+      // getters
+      bool isWhite() { return white; };
+      bool isMove() { return nMoves > 0; };
+      int getNMoves() { return nMoves; };
+      const Position& getPosition() const { return position; }
+      virtual char getLetter() const = 0;
+      virtual std::set<Move> getPossible(const Board &board) = 0;
+
+      // drawing
+      virtual void draw(ogstream& gout) = 0;
+
+      // operator overloads
+      bool operator== (char letter) const { return getLetter() == letter; }
+      bool operator!= (char letter) { return getLetter() != letter; }
 };
 
 /************************
@@ -55,6 +61,7 @@ public:
    std::set<Move> getPossible(const Board& board);
    char getLetter() const { return 'p'; }
    bool isMoved() { return !isFirstMove; }
+   void draw(ogstream& gout);
 private:
    bool isFirstMove;
 };
@@ -69,6 +76,7 @@ public:
    Rook(const Position& point, bool white);
    std::set<Move> getPossible(const Board& board);
    char getLetter() const { return 'r'; }
+   void draw(ogstream& gout);
    private:
       bool isFirstMove;
 };
@@ -82,6 +90,7 @@ public:
    Knight(const Position& point, bool white);
    std::set<Move> getPossible(const Board& board);
    char getLetter() const { return 'n'; }
+   void draw(ogstream& gout);
 };
 
 /************************
@@ -93,6 +102,7 @@ public:
    Bishop(const Position& point, bool white);
    std::set<Move> getPossible(const Board& board);
    char getLetter() const { return 'b'; }
+   void draw(ogstream& gout);
 };
 
 /************************
@@ -104,6 +114,7 @@ public:
    Queen(const Position& point, bool white);
    std::set<Move> getPossible(const Board& board);
    char getLetter() const { return 'q'; }
+   void draw(ogstream& gout);
 };
 
 /************************
@@ -116,6 +127,7 @@ public:
    King(const Position& point, bool white);
    std::set<Move> getPossible(const Board& board);
    char getLetter() const { return 'k'; }
+   void draw(ogstream& gout);
    private:
       bool isFirstMove;
 };
@@ -129,4 +141,5 @@ public:
    Space(const Position& position);
    std::set<Move> getPossible(const Board& board) { return {}; }
    char getLetter() const { return ' '; }
+   void draw(ogstream& gout);
  };

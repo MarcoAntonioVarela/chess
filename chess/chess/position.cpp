@@ -10,6 +10,9 @@
 #include "position.h"
 #include <iostream>
 
+double Position::squareWidth = PIXELS_PER_SQUARE;
+double Position::squareHeight = PIXELS_PER_SQUARE;
+
 /***************************************************
  * POSITION : COPY CONSTRUCTOR
  ***************************************************/

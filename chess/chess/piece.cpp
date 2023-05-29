@@ -15,27 +15,7 @@ using namespace std;
 /************
 * PIECE
 ************/
-Piece::Piece() : nMoves(0) {}
-
-//bool Piece::isWhite() {
-//   return fWhite;
-//}
-
-//bool Piece::isMove() {
-//   return nMoves > 0;
-//}
-
-//int Piece::getNMoves() {
-//   return nMoves;
-//}
-//
-//Point Piece::getPosition() {
-//   return position;
-//}
-//
-//bool Piece::justMoved() {
-//   return lastMove == nMoves - 1;
-//}
+Piece::Piece() : nMoves(0), lastMove(0) {}
 
 /************
 * PAWN
@@ -66,7 +46,7 @@ set<Move> Pawn::getPossible(const Board& board)
    }
 
    // Double space for first move
-   if (!isMoved())
+   if (!isMoved() && posMove.isValid())
    {
       Position posMove(isWhite() ? 3 : 4, getPosition().getCol());
       Position posCheck(isWhite() ? 2 : 5, getPosition().getCol());
@@ -80,7 +60,6 @@ set<Move> Pawn::getPossible(const Board& board)
          possible.insert(move);
       }
    }
-
 
    // Promotion
    if (posMove.getRow() == (isWhite() ? 7 : 0))
@@ -109,12 +88,41 @@ set<Move> Pawn::getPossible(const Board& board)
          move.setDes(posMove);
          move.setWhiteMove(isWhite());
          move.setCapture(move.pieceTypeFromLetter(board[posMove].getLetter()));
+         possible.insert(move);
+      }
+   }
 
+   // en-passant
+   for (int i = 0; i < 2; i++)
+   {
+      Position posMove(position.getRow() + (isWhite() ? 1 : -1),
+         position.getCol() + cDelta[i]);
+      Position posKill(position.getRow(),
+         position.getCol() + cDelta[i]);
+
+      if (posMove.isValid() &&
+         position.getRow() == (isWhite() ? 4 : 3) &&
+         board[posMove] == ' ' &&
+         board[posKill] == 'p' &&
+         board[posKill].isWhite() != isWhite() &&
+         board[posKill].getNMoves() == 1)
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         move.setCapture(PAWN);
+         move.setEnPassant();
          possible.insert(move);
       }
    }
 
    return possible;
+}
+
+void Pawn::draw(ogstream& gout)
+{
+   gout.drawPawn(position, isWhite());
 }
 
 /************************
@@ -125,7 +133,13 @@ Space::Space(const Position& position)
    white = true; 
 }
 
+<<<<<<< HEAD
 
+=======
+void Space::draw(ogstream& gout)
+{
+}
+>>>>>>> a43a14ca1d519e1ab637bdc92ed5e584472814a0
 
 /************************
 * ROOK
@@ -143,6 +157,11 @@ Rook::Rook(const Position& point, bool isWhite)
 set<Move> Rook::getPossible(const Board& board)
 {
     return {};
+}
+
+void Rook::draw(ogstream& gout)
+{
+   gout.drawRook(position, isWhite());
 }
 
 /************************
@@ -165,6 +184,11 @@ set<Move> Knight::getPossible(const Board& board)
     return possible;
 }
 
+void Knight::draw(ogstream& gout)
+{
+   gout.drawKnight(position, isWhite());
+}
+
 
 /************************
 * BISHOP Marco
@@ -183,8 +207,42 @@ set<Move> Bishop::getPossible(const Board& board)
     return {};
 }
 
+<<<<<<< HEAD
 /************************
 * KING Marco
+=======
+void Bishop::draw(ogstream& gout)
+{
+   gout.drawBishop(position, isWhite());
+}
+
+
+/************************
+* QUEEN
+***********************/
+Queen::Queen(const Position& point, bool isWhite)
+{
+    this->white = isWhite;
+    position = Position(point);
+}
+
+/************
+* QUEEN::getPossible
+************/
+set<Move> Queen::getPossible(const Board& board)
+{
+    return {};
+}
+
+void Queen::draw(ogstream& gout)
+{
+   gout.drawQueen(position, isWhite());
+}
+
+
+/************************
+* KING
+>>>>>>> a43a14ca1d519e1ab637bdc92ed5e584472814a0
 ***********************/
 King::King(const Position& point, bool isWhite)
 {
@@ -248,6 +306,7 @@ set<Move> King::getPossible(const Board& board)
    return possible;
 }
 
+<<<<<<< HEAD
 
 
 
@@ -287,3 +346,9 @@ set<Move> Queen::getPossible(const Board& board)
 //{
 //   return {};
 //}
+=======
+void King::draw(ogstream& gout)
+{
+   gout.drawKing(position, isWhite());
+}
+>>>>>>> a43a14ca1d519e1ab637bdc92ed5e584472814a0

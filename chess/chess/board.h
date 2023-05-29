@@ -8,15 +8,13 @@
  ************************************************************************/
 #pragma once
 #include "piece.h"
-
-class ogstream;
+#include "uiDraw.h"
 
 class Board
 {
    private:
       Piece* board[8][8];
      int currentMove;
-//   ogstream gout;
      void swap(Position& point1, Position& point2);
 //   bool assertBoard();
 
@@ -27,7 +25,7 @@ class Board
       bool isWhiteTurn() { return currentMove % 2 == 0; }
       void reset(); // Pieces back to the original position.
 //   void free();
-//   void draw();
+      void draw();
 
       // operator overloads
       Piece& operator[] (const Position& point);
