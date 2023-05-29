@@ -125,6 +125,8 @@ Space::Space(const Position& position)
    white = true; 
 }
 
+
+
 /************************
 * ROOK
 ***********************/
@@ -144,7 +146,7 @@ set<Move> Rook::getPossible(const Board& board)
 }
 
 /************************
-* KNIGHT
+* KNIGHT Marco
 ***********************/
 Knight::Knight(const Position& point, bool isWhite)
 {
@@ -157,12 +159,15 @@ Knight::Knight(const Position& point, bool isWhite)
 ************/
 set<Move> Knight::getPossible(const Board& board)
 {
-    return {};
+
+   //cambiar el return por el set de possibles
+    set<Move> possible = {};
+    return possible;
 }
 
 
 /************************
-* BISHOP
+* BISHOP Marco
 ***********************/
 Bishop::Bishop(const Position& point, bool isWhite)
 {
@@ -178,27 +183,8 @@ set<Move> Bishop::getPossible(const Board& board)
     return {};
 }
 
-
 /************************
-* QUEEN
-***********************/
-Queen::Queen(const Position& point, bool isWhite)
-{
-    this->white = isWhite;
-    position = Position(point);
-}
-
-/************
-* QUEEN::getPossible
-************/
-set<Move> Queen::getPossible(const Board& board)
-{
-    return {};
-}
-
-
-/************************
-* KING
+* KING Marco
 ***********************/
 King::King(const Position& point, bool isWhite)
 {
@@ -212,5 +198,92 @@ King::King(const Position& point, bool isWhite)
 ************/
 set<Move> King::getPossible(const Board& board)
 {
-    return {};
+   set<Move>possible = {};
+
+   const Delta delta[] =
+
+   {
+      {-1,1},   {0,1},  {1,1},
+      {-1,0},           {1,0},
+      {-1,- 1},{0,-1},  {1,-1}
+   };
+   
+   for (int i = 0; i < 9; i++)
+   {
+      Position posMove(position.getRow() + delta[i][0],
+         position.getCol() + delta[i][1]);
+      
+      //To capture enemy piece
+      if (posMove.isValid() &&
+         board[posMove] != ' ' &&
+         board[posMove].isWhite() != isWhite())
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         move.setCapture(move.pieceTypeFromLetter(board[posMove].getLetter()));
+         possible.insert(move);
+      }
+
+      //Empty space move
+      if (posMove.isValid() &&
+         board[posMove] == ' ' )
+
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         possible.insert(move);
+      }
+
+      //Agregar castling
+
+     
+   }
+
+
+
+   return possible;
 }
+
+
+
+
+
+/************************
+* QUEEN Marco
+***********************/
+Queen::Queen(const Position& point, bool isWhite)
+{
+   this->white = isWhite;
+   position = Position(point);
+}
+
+/************
+* QUEEN::getPossible
+************/
+set<Move> Queen::getPossible(const Board& board)
+{
+
+   return {};
+}
+
+//
+///************************
+//* QUEEN Marco
+//***********************/
+//Queen::Queen(const Position& point, bool isWhite)
+//{
+//   this->white = isWhite;
+//   position = Position(point);
+//}
+//
+///************
+//* QUEEN::getPossible
+//************/
+//set<Move> Queen::getPossible(const Board& board)
+//{
+//   return {};
+//}
