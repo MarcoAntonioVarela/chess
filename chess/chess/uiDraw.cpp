@@ -153,7 +153,7 @@ void ogstream::drawPiece(Position& pos, bool white, Rect rectangle[], int num) c
 *   INPUT  location  The location of the king
 *          black     Whether the king is black
 *************************************************************************/
-void ogstream::drawKing(Position& pos, bool black)
+void ogstream::drawKing(Position& pos, bool white)
 {
    Rect rectangles[] =
    {
@@ -165,8 +165,7 @@ void ogstream::drawKing(Position& pos, bool black)
       { 8,-4, -8,-4, -8,-5,  8,-5},    // base center
       { 8,-6, -8,-6, -8,-8,  8,-8}     // base
    };
-   
-   //drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 7);
+   drawPiece(pos, white, rectangles, 7);
 }
 
 /************************************************************************
@@ -175,7 +174,7 @@ void ogstream::drawKing(Position& pos, bool black)
 *   INPUT  location  The location of the queen
 *          black     Whether the queen is black
 *************************************************************************/
-void ogstream::drawQueen(int pos, bool black)
+void ogstream::drawQueen(Position& pos, bool white)
 {
    Rect rectangles[] =
    {
@@ -189,8 +188,7 @@ void ogstream::drawQueen(int pos, bool black)
       { 6,-3, -6,-3, -6,-5,  6,-5},     // middel base
       { 8,-6, -8,-6, -8,-8,  8,-8}      // base
    };
-
-   //drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 9);
+   drawPiece(pos, white, rectangles, 9);
 }
 
 /************************************************************************
@@ -199,7 +197,7 @@ void ogstream::drawQueen(int pos, bool black)
 *   INPUT  location  The location of the Rook
 *          black     Whether the knight is castle
 *************************************************************************/
-void ogstream::drawRook(int pos, bool black)
+void ogstream::drawRook(Position& pos, bool white)
 {
    Rect rectangles[] =
    {
@@ -209,8 +207,7 @@ void ogstream::drawRook(int pos, bool black)
       { 4,3,   4,-5, -4,-5, -4,3},   // wall
       { 6,-6, -6,-6, -6,-8,  6,-8}   // base
    };
-
-   //drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 5);
+   drawPiece(pos, white, rectangles, 5);
 }
 
 /************************************************************************
@@ -219,7 +216,7 @@ void ogstream::drawRook(int pos, bool black)
 *   INPUT  location  The location of the knight
 *          black     Whether the knight is black
 *************************************************************************/
-void ogstream::drawKnight(int pos, bool black)
+void ogstream::drawKnight(Position& pos, bool white)
 {
    Rect rectangles[] =
    {
@@ -230,8 +227,7 @@ void ogstream::drawKnight(int pos, bool black)
       { 6,-6, -6,-6, -6,-8,  6,-8}  // base
    
    };
-
-   //drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 5);
+   drawPiece(pos, white, rectangles, 5);
 }
 
 /************************************************************************
@@ -240,7 +236,7 @@ void ogstream::drawKnight(int pos, bool black)
 *   INPUT  location  The location of the Bishop
 *          black     Whether the knight is Bishop
 *************************************************************************/
-void ogstream::drawBishop(int pos, bool black)
+void ogstream::drawBishop(Position& pos, bool white)
 {
    Rect rectangles[] =
    {
@@ -251,8 +247,7 @@ void ogstream::drawBishop(int pos, bool black)
       {-2,2,  -4,-5,  4,-5,  2,2 },   // neck
       { 6,-6, -6,-6, -6,-8,  6,-8}    // base
    };
-
-   //drawPiece(xFromPosition(pos), yFromPosition(pos), black, rectangles, 6);
+   drawPiece(pos, white, rectangles, 6);
 }
 
 /************************************************************************
@@ -272,7 +267,6 @@ void ogstream::drawPawn(Position& pos, bool white)
    };
 
    drawPiece(pos, white, rectangles, 4);
-   // drawPiece(xFromPosition(pos), yFromPosition(pos), white, rectangles, 4);
 }
 
 /************************************************************************

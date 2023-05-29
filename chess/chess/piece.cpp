@@ -157,6 +157,7 @@ set<Move> Rook::getPossible(const Board& board)
 
 void Rook::draw(ogstream& gout)
 {
+   gout.drawRook(position, isWhite());
 }
 
 /************************
@@ -178,6 +179,7 @@ set<Move> Knight::getPossible(const Board& board)
 
 void Knight::draw(ogstream& gout)
 {
+   gout.drawKnight(position, isWhite());
 }
 
 
@@ -200,6 +202,7 @@ set<Move> Bishop::getPossible(const Board& board)
 
 void Bishop::draw(ogstream& gout)
 {
+   gout.drawBishop(position, isWhite());
 }
 
 
@@ -222,6 +225,7 @@ set<Move> Queen::getPossible(const Board& board)
 
 void Queen::draw(ogstream& gout)
 {
+   gout.drawQueen(position, isWhite());
 }
 
 
@@ -245,4 +249,5 @@ set<Move> King::getPossible(const Board& board)
 
 void King::draw(ogstream& gout)
 {
+   gout.drawKing(position, isWhite());
 }

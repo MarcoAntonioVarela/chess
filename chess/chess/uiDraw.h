@@ -34,12 +34,12 @@ public:
 
 
     // Methods to draw the chess pieces on the screen
-    virtual void drawKing(  Position& pos, bool black);
-    virtual void drawQueen( int position, bool black);
-    virtual void drawRook(  int position, bool black);
-    virtual void drawPawn(  Position& pos, bool black);
-    virtual void drawBishop(int position, bool black);
-    virtual void drawKnight(int position, bool black);
+    virtual void drawKing(  Position& pos, bool white);
+    virtual void drawQueen( Position& pos, bool white);
+    virtual void drawRook(  Position& pos, bool white);
+    virtual void drawPawn(  Position& pos, bool white);
+    virtual void drawBishop(Position& pos, bool white);
+    virtual void drawKnight(Position& pos, bool white);
 
     // Methods to draw the board 
     virtual void drawBoard();

@@ -32,7 +32,6 @@ int main()
    Interface ui("Chess");
 
    Board* pBoard = new Board;
-   void* dt = pBoard;
    
    // set everything into action
    ui.run(callBack, pBoard);
