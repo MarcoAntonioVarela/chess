@@ -22,8 +22,16 @@ void runner()
 
 void callBack(Interface* pUI, void* p)
 {
+   ogstream gout;
    Board* board = (Board*)p;
+
+   // draw any selections
+   gout.drawHover(pUI->getHoverPosition());
+   gout.drawSelected(pUI->getSelectPosition());
+
+   // draw both the board and the pieces
    board->draw();
+
 }
 
 

@@ -45,12 +45,12 @@
 using namespace std;
 
 // pieces: black and white
-const int RGB_WHITE[] = { 255, 255, 255 };
-const int RGB_BLACK[] = { 0, 0, 0 };
+const int RGB_WHITE[] = { 248, 247, 248 };
+const int RGB_BLACK[] = {  68,  64,  63 };
 
 // normal squares: tan and brown
-const int RGB_WHITE_SQUARE[] = { 210, 180, 140 };
-const int RGB_BLACK_SQUARE[] = { 165, 42, 42 };
+const int RGB_WHITE_SQUARE[] = { 181, 135, 99 };
+const int RGB_BLACK_SQUARE[] = { 240, 218, 181 };
 
 // the color of a selected square
 const int RGB_SELECTED[] = { 0, 0, 255 };
