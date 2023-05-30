@@ -7,6 +7,7 @@
  *    The Board has all the pieces, and helps each piece know where to move
  ************************************************************************/
 #include "board.h"
+#include <set>
 
 Board::Board()
 {
@@ -94,13 +95,13 @@ void Board::reset()
    board[7][7] = new Rook(Position("h1"), true);
 }
 
-void Board::drawBoard()
+void Board::drawBoard() const
 {
    ogstream gout;
    gout.drawBoard();
 }
 
-void Board::drawPieces()
+void Board::drawPieces() const
 {
    ogstream gout;
    for (int i = 0; i < 8; i++)

@@ -23,8 +23,8 @@ class Board
       int getCurrentMove() { return currentMove; }
       bool isWhiteTurn() { return currentMove % 2 == 0; }
       void reset(); // Pieces back to the original position.
-      void drawBoard();
-      void drawPieces();
+      void drawBoard() const;
+      void drawPieces() const;
 
       // operator overloads
       Piece& operator[] (const Position& point);
