@@ -160,16 +160,53 @@ Rook::Rook(const Position& point, bool isWhite)
 ************/
 set<Move> Rook::getPossible(const Board& board)
 {
-   set<Move>possible = {};
-   const Delta delta[] =
-      {
-                  {0,1}, 
+   set<Move> possible;
+
+
+   struct Delta {
+      int x;
+      int y;
+   };
+
+   const Delta delta[] = 
+   {
+                  {0,1},
          {-1,0},           {1,0},
                   {0,-1}
-      };
-    return possible;
-}
+   };
+   for (int i = 0; i < 3; i++)
+   {
+      Position posMove(position.getRow() + delta[i].x
+         / position.getCol() + delta[i].y);
+      // capture?
+      if (posMove.isValid() &&
+         board[posMove] != ' ' &&
+         board[posMove].isWhite() != isWhite())
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         move.setCapture(move.pieceTypeFromLetter(board[posMove].getLetter()));
+         possible.insert(move);
+      }
 
+      // empty space?
+      else if (posMove.isValid() &&
+         board[posMove] == ' ')
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         possible.insert(move);
+      }
+      // castling
+
+
+   }
+   return possible;
+};
 void Rook::draw(ogstream& gout)
 {
    gout.drawRook(position, isWhite());
@@ -181,7 +218,7 @@ void Rook::draw(ogstream& gout)
 
 
 /************************
-* KNIGHT Marco
+* KNIGHT 
 ***********************/
 Knight::Knight(const Position& point, bool isWhite)
 {
@@ -194,17 +231,56 @@ Knight::Knight(const Position& point, bool isWhite)
 ************/
 set<Move> Knight::getPossible(const Board& board)
 {
-      set<Move>possible = {};
-      const Delta delta[] =
-      {
+   set<Move> possible;
+
+
+   struct Delta {
+      int x;
+      int y;
+   };
+
+   const Delta delta[] = {
              {-1,2},     {1,2},
          {-2,1},           {2,1},
 
-         {-2,-1},         {2-1},
-            {-1,2},         {1-2}
-      };
-    return possible;
-}
+         {-2,-1},         {2 - 1},
+            {-1,2},         {1 - 2}
+   };
+
+   for (int i = 0; i < 7; i++)
+   {
+      Position posMove(position.getRow() + delta[i].x
+         / position.getCol() + delta[i].y);
+      // capture?
+      if (posMove.isValid() &&
+         board[posMove] != ' ' &&
+         board[posMove].isWhite() != isWhite())
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         move.setCapture(move.pieceTypeFromLetter(board[posMove].getLetter()));
+         possible.insert(move);
+      }
+
+      // empty space?
+      else if (posMove.isValid() &&
+         board[posMove] == ' ')
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         possible.insert(move);
+      }
+      // castling
+
+
+   }
+   return possible;
+};
+
 
 void Knight::draw(ogstream& gout)
 {
@@ -225,15 +301,53 @@ Bishop::Bishop(const Position& point, bool isWhite)
 ************/
 set<Move> Bishop::getPossible(const Board& board)
 {
-      set<Move>possible = {};
-      const Delta delta[] =
-      {
+   set<Move> possible;
+
+
+   struct Delta {
+      int x;
+      int y;
+   };
+
+   const Delta delta[] = {
          {-1,1},       {1,1},
-         
+
          {-1,-1},      {1,-1}
-      };
-    return possible;
-}
+   };
+
+   for (int i = 0; i < 3; i++)
+   {
+      Position posMove(position.getRow() + delta[i].x
+         / position.getCol() + delta[i].y);
+      // capture?
+      if (posMove.isValid() &&
+         board[posMove] != ' ' &&
+         board[posMove].isWhite() != isWhite())
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         move.setCapture(move.pieceTypeFromLetter(board[posMove].getLetter()));
+         possible.insert(move);
+      }
+
+      // empty space?
+      else if (posMove.isValid() &&
+         board[posMove] == ' ')
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         possible.insert(move);
+      }
+      // castling
+
+
+   }
+   return possible;
+};
 
 void Bishop::draw(ogstream& gout)
 {
@@ -254,20 +368,53 @@ Queen::Queen(const Position& point, bool isWhite)
 ************/
 set<Move> Queen::getPossible(const Board& board)
 {
-   set<Move>possible = {};
+   set<Move> possible;
 
-   const Delta delta[] =
+   struct Delta {
+      int x;
+      int y;
+   };
 
-   {
+   const Delta delta[] = {
       {-1,1}, {0,1}, {1,1},
       {-1,0},        {1,0},
       {-1,-1},{0,-1},{1,-1}
-   };
+   };;
 
+   for (int i = 0; i < 7; i++)
+   {
+      Position posMove(position.getRow() + delta[i].x
+         / position.getCol() + delta[i].y);
+
+      // capture
+      if (posMove.isValid() &&
+         board[posMove] != ' ' &&
+         board[posMove].isWhite() != isWhite())
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         move.setCapture(move.pieceTypeFromLetter(board[posMove].getLetter()));
+         possible.insert(move);
+      }
+
+      // empty space
+      else if (posMove.isValid() &&
+         board[posMove] == ' ')
+      {
+         Move move;
+         move.setSrc(getPosition());
+         move.setDes(posMove);
+         move.setWhiteMove(isWhite());
+         possible.insert(move);
+      }
+      
+
+
+   }
    return possible;
-}
-
-
+};
 
 
 void Queen::draw(ogstream& gout)
@@ -290,7 +437,6 @@ King::King(const Position& point, bool isWhite)
 * KING::getPossible
 ************/
 set<Move> King::getPossible(const Board& board)
-
  {
    std::set<Move> possible;
 
@@ -306,11 +452,11 @@ set<Move> King::getPossible(const Board& board)
        {-1, -1}, {0, -1}, {1, -1}
    };
 
-   for (int i = 0; i < 8; i++) 
+   for (int i = 0; i < 7; i++) 
    {
       Position posMove(position.getRow() + delta[i].x
          / position.getCol() + delta[i].y);
-      // capture?
+      // capture
       if (posMove.isValid()&&
                board[posMove] != ' ' &&
                board[posMove].isWhite() != isWhite())
@@ -323,7 +469,7 @@ set<Move> King::getPossible(const Board& board)
          possible.insert(move);
       }
 
-      // empty space?
+      // empty space
       else if (posMove.isValid()&&
                board[posMove] == ' ' )
       {           
