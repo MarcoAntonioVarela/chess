@@ -162,7 +162,6 @@ set<Move> Rook::getPossible(const Board& board)
 {
    set<Move> possible;
 
-
    struct Delta {
       int x;
       int y;
@@ -174,7 +173,7 @@ set<Move> Rook::getPossible(const Board& board)
          {-1,0},           {1,0},
                   {0,-1}
    };
-   for (int i = 0; i < 3; i++)
+   for (int i = 0; i < 4; i++)
    {
       Position posMove(position.getRow() + delta[i].x
          / position.getCol() + delta[i].y);
@@ -201,9 +200,6 @@ set<Move> Rook::getPossible(const Board& board)
          move.setWhiteMove(isWhite());
          possible.insert(move);
       }
-      // castling
-
-
    }
    return possible;
 };
@@ -211,11 +207,6 @@ void Rook::draw(ogstream& gout)
 {
    gout.drawRook(position, isWhite());
 }
-
-
-
-
-
 
 /************************
 * KNIGHT 
@@ -232,7 +223,6 @@ Knight::Knight(const Position& point, bool isWhite)
 set<Move> Knight::getPossible(const Board& board)
 {
    set<Move> possible;
-
 
    struct Delta {
       int x;
@@ -274,13 +264,9 @@ set<Move> Knight::getPossible(const Board& board)
          move.setWhiteMove(isWhite());
          possible.insert(move);
       }
-      // castling
-
-
    }
    return possible;
 };
-
 
 void Knight::draw(ogstream& gout)
 {
@@ -302,7 +288,6 @@ Bishop::Bishop(const Position& point, bool isWhite)
 set<Move> Bishop::getPossible(const Board& board)
 {
    set<Move> possible;
-
 
    struct Delta {
       int x;
@@ -342,9 +327,6 @@ set<Move> Bishop::getPossible(const Board& board)
          move.setWhiteMove(isWhite());
          possible.insert(move);
       }
-      // castling
-
-
    }
    return possible;
 };
@@ -409,13 +391,9 @@ set<Move> Queen::getPossible(const Board& board)
          move.setWhiteMove(isWhite());
          possible.insert(move);
       }
-      
-
-
    }
    return possible;
 };
-
 
 void Queen::draw(ogstream& gout)
 {
@@ -432,14 +410,12 @@ King::King(const Position& point, bool isWhite)
     isFirstMove = true;
 }
 
-
 /************
 * KING::getPossible
 ************/
 set<Move> King::getPossible(const Board& board)
  {
    std::set<Move> possible;
-
 
    struct Delta {
       int x;
@@ -480,63 +456,9 @@ set<Move> King::getPossible(const Board& board)
          possible.insert(move);
        }
       // castling
-
-
    }
    return possible;
 };
-//{
-//   set<Move>possible = {};
-
-//   const Delta delta[] =
-
-
-
-//   {
-//      {-1,1},   {0,1},  {1,1},
-//      {-1,0},           {1,0},
-//      {-1,- 1},{0,-1},  {1,-1}
-//   };
-
-
-
-   
-   //for (int i = 0; i < 9; i++)
-   //{
-   //   Position posMove(position.getRow() + delta[i][0],
-   //      position.getCol() + delta[i][1];
-      
-   //   //To capture enemy piece
-   //   if (posMove.isValid() &&
-   //      board[posMove] != ' ' &&
-   //      board[posMove].isWhite() != isWhite())
-   //   {
-   //      Move move;
-   //      move.setSrc(getPosition());
-   //      move.setDes(posMove);
-   //      move.setWhiteMove(isWhite());
-   //      move.setCapture(move.pieceTypeFromLetter(board[posMove].getLetter()));
-   //      possible.insert(move);
-   //   }
-
-   //   //Empty space move
-   //   if (posMove.isValid() &&
-   //      board[posMove] == ' ' )
-
-   //   {
-   //      Move move;
-   //      move.setSrc(getPosition());
-   //      move.setDes(posMove);
-   //      move.setWhiteMove(isWhite());
-   //      possible.insert(move);
-   //   }
-
-   //   //Agregar castling
-
-     
-   //}
-//   return possible;
-//}
 
 void King::draw(ogstream& gout)
 {

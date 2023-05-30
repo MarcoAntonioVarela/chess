@@ -12,6 +12,24 @@ This file contains the 'main' function. Our chess program execution begins and e
 #include "uiInteract.h"
 
 
+std::set<Move> getPossibleMoves(const Board& board, int location)
+{
+   std::set<Move> possible;
+
+   // return the empty set if there simply are no possible moves
+   if (location < 0 || location >= 64 || board[location] == ' ')
+      return possible;
+   int row = board[location].getPosition().getRow();  // current location row
+   int col = board[location].getPosition().getCol();  // current location column
+   //bool amBlack = isBlack(board, row, col);
+   Position position(location);
+   
+   possible = board[location].getPossible(board);
+
+   return possible;
+}
+
+
 void draw(const Board& board, const Interface& ui, const std::set<Move>& possible)
 {
    ogstream gout;
@@ -41,7 +59,7 @@ void callBack(Interface* pUI, void* p)
 
    // TODO: Populte the possible moves depending on the piece
    // that was selected by the user.
-
+   possible = getPossibleMoves(*board, pUI->getSelectPosition());
 
    // draw the board
    draw(*board, *pUI, possible);
